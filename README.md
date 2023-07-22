@@ -1,7 +1,5 @@
 # Recursive HDF5 to Parquet Converter
 
-![Project Logo](logo.png) <!-- If you have a project logo, add it here -->
-
 ## Table of Contents
 
 - [Introduction](#introduction)
