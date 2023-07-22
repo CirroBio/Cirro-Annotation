@@ -24,6 +24,7 @@ This converter offers a convenient way to convert HDF5 files into Parquet format
 - Efficiently handles large datasets
 - Parallel processing for faster conversion (optional)
 - Customizable options for conversion settings
+- Generates a JSON manifest file that mirrors the H5-Seurat format and contains references to each exported parquet file
 
 ## Installation
 
