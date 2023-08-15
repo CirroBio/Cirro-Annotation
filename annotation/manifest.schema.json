@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "files": {
+            "type": "object",
+            "properties": {
+                "standard": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "file": {
+                                "type": "string"
+                            },
+                            "columns": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": ["file", "columns"]
+                    }
+                },
+                "variable": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "pattern": {
+                                "type": "string"
+                            },
+                            "regex": {
+                                "type": "string"
+                            },
+                            "columns": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": ["pattern", "regex", "columns"]
+                    }
+                }
+            },
+            "required": ["standard", "variable"]
+        },
+        "columns": {
+            "type": "object",
+            "properties": {
+                "standard": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "column": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "desc": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["column", "name", "desc"]
+                    }
+                },
+                "variable": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "columns": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "desc": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["columns", "name", "desc"]
+                    }
+                }
+            },
+            "required": ["standard", "variable"]
+        }
+    },
+    "required": ["files", "columns"]
+}

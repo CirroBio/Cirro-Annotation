@@ -13,9 +13,6 @@ from cirro.cli.interactive.utils import ask_yes_no, ask
 from .ask_process import ask_process
 from .ask_dataset import ask_dataset
 from .ask_prompt import ask_prompt
-import csv
-
-
 
 def read_csv(filename):
     df = pd.read_csv(filename, sep=None, engine='python')
@@ -177,6 +174,11 @@ def run_annotate(input_params: DownloadArguments):
     columns_standard = [columns_mapping[value] for value in columns_standard]
     
     columns_variable = process_variable_columns(columns_variable)
+
+    # Delete property "example" from files_variable
+    for value in files_variable:
+        del value['example']
+        
 
     manifest = {
         "files": { 
