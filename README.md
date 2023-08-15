@@ -1,83 +1,57 @@
-# Recursive HDF5 to Parquet Converter
+# Cirro's Scientific Pipeline Annotation Tool
 
-## Table of Contents
+## Overview
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-The Recursive HDF5 to Parquet Converter is a Python-based tool that enables users to recursively navigate through HDF5 files and convert their contents into Parquet files. HDF5 (Hierarchical Data Format) files are commonly used to store large volumes of complex scientific data, while Parquet is a columnar storage file format that is highly optimized for analytics and big data processing.
-
-This converter offers a convenient way to convert HDF5 files into Parquet format, which can significantly improve data analysis performance and storage efficiency, especially when working with large datasets.
+Cirro's Annotation Tool processes the outputs from scientific pipelines and allows users to provide feedback. This feedback is integrated into a manifest JSON file, which subsequently can be utilized by other systems to produce web-optimized visualization assets. This CLI-based Python tool serves as an essential bridge between raw scientific data and interactive, user-friendly visual representations on the web.
 
 ## Features
 
-- Recursively navigates through directories to find HDF5 files
-- Converts HDF5 files into Parquet files
-- Preserves the hierarchical structure of the original HDF5 files
-- Efficiently handles large datasets
-- Parallel processing for faster conversion (optional)
-- Customizable options for conversion settings
-- Generates a JSON manifest file that mirrors the H5-Seurat format and contains references to each exported parquet file
+- **Annotation Loop**: Efficiently loops through pipeline outputs and provides an interface for user feedback.
+- **Manifest Creation**: Automatically synthesizes feedback and data into a structured manifest JSON file.
+- **Web Visualization Compatibility**: Ensures that the produced manifest is optimized for web visualization tools.
 
-## Installation
+## Getting Started
 
-1. Ensure you have Python 3.x installed on your system.
-2. Clone this GitHub repository:
+### Prerequisites
 
-   ```
-   git clone https://github.com/your_username/recursive-hdf5-to-parquet.git
-   cd recursive-hdf5-to-parquet
-   ```
+- Python 3.7 or newer
+- Required libraries (see `requirements.txt` for details)
 
-3. Install the required dependencies using pip:
+### Installation
 
-   ```
-   pip install -r requirements.txt
-   ```
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/cirro-annotation-tool.git
+    ```
 
-## Usage
+2. Navigate to the project directory:
+    ```bash
+    cd cirro-annotation-tool
+    ```
 
-The Recursive HDF5 to Parquet Converter can be used through the command line interface (CLI). The basic syntax is as follows:
+3. Install the required Python libraries:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```
-python converter.py --input <input_directory> --output <output_directory>
-```
+### Usage
 
-Replace `<input_directory>` with the path to the root directory containing your HDF5 files and `<output_directory>` with the destination directory where the Parquet files will be stored.
+1. Run the CLI tool:
+    ```bash
+    python annotate_cli.py --input /path/to/pipeline/outputs/
+    ```
 
-### Optional Parameters
+2. Follow the on-screen prompts to annotate each output.
 
-- `--num_threads`: Number of threads for parallel processing (default: maximum available cores)
-- `--compression`: Specify the compression algorithm for Parquet files (default: 'snappy')
-- `--verbose`: Enable verbose mode to display detailed logs (default: False)
+3. Upon completion, the tool will produce a `manifest.json` file in the current directory, ready for the web visualization process.
 
-## Examples
-
-1. Convert HDF5 files in the current directory and save Parquet files in the 'output' directory:
-
-   ```
-   python converter.py --input . --output output
-   ```
-
-2. Convert HDF5 files in a specific directory with verbose logging and 4 threads:
-
-   ```
-   python converter.py --input /path/to/hdf5_files --output /path/to/parquet_files --verbose --num_threads 4
-   ```
-
-## Contributing
-
-Contributions to the Recursive HDF5 to Parquet Converter are welcome! If you have any bug fixes, improvements, or new features to propose, please open an issue or submit a pull request. For major changes, it's best to discuss your ideas first with the project maintainers.
-
-When contributing, please ensure that your code follows the existing coding style and includes appropriate tests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## How the Annotation Works
+1. User selects a Cirro PROJECT that contains a dataset that should be annotated.
+2. User selects the Cirro PROCESS that they want to annotate.
+3. User selects an exemplar DATASET that is used to determine subsequent prompts and what files to annotate.
+4. Script downloads dataset FILES that could be used for visualization
+5. User selects all FILES that vary by run. (Files or file paths that contain dataset specific strings.)
+6. User replaces portions of FILES or file paths that vary with [TOKENS] until all files are resolved.  The [TOKEN] must be all uppercase and wrapped in square brackets.  The copy in the brackets will ultimately be use for a column name and all files that match will be concatinated.
+7. User selects all COLUMNS that vary by run. (Column names that contain datset specific strings.)
+8. User sub-selects from the COLUMNS all columns that relate to a particular VARIABLE, until all columns are resolved.  
+9. User provides a name and description for each VARIABLE.
