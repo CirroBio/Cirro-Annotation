@@ -18,6 +18,7 @@ def annotate(**kwargs):
     check_required_args(kwargs)
     run_annotate(kwargs)
 
+
 def main():
     try:
         run()
