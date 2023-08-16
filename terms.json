@@ -1,0 +1,1104 @@
+{
+    "basemean": {
+        "column": [
+            "baseMean"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "basemean",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "c": {
+        "column": [
+            "C"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "c",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "c_call": {
+        "column": [
+            "c_call"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "c_call",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "cdr1": {
+        "column": [
+            "cdr1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "cdr1",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "cdr2": {
+        "column": [
+            "cdr2"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "cdr2",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "cdr3aa": {
+        "column": [
+            "CDR3aa"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "cdr3aa",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "cdr3nt": {
+        "column": [
+            "CDR3nt"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "cdr3nt",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "cell_id": {
+        "column": [
+            "cell_id"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "cell_id",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "cid": {
+        "column": [
+            "cid"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "cid",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "cid_full_length": {
+        "column": [
+            "cid_full_length"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "cid_full_length",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "complete_vdj": {
+        "column": [
+            "complete_vdj"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "complete_vdj",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "consensus_count": {
+        "column": [
+            "consensus_count"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "consensus_count",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "count": {
+        "column": [
+            "#count"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "count",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "d": {
+        "column": [
+            "D"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "d",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "d_call": {
+        "column": [
+            "d_call"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "d_call",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "d_cigar": {
+        "column": [
+            "d_cigar"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "d_cigar",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "es": {
+        "column": [
+            "ES"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "es",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "frequency": {
+        "column": [
+            "frequency"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "frequency",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "gene_id": {
+        "column": [
+            "gene_id"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "gene_id",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/rankings.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "germline_alignment": {
+        "column": [
+            "germline_alignment"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "germline_alignment",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "j": {
+        "column": [
+            "J"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "j",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "j_call": {
+        "column": [
+            "j_call"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "j_call",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "j_cigar": {
+        "column": [
+            "j_cigar"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "j_cigar",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "j_identity": {
+        "column": [
+            "j_identity"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "j_identity",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "junction": {
+        "column": [
+            "junction"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "junction",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "junction_aa": {
+        "column": [
+            "junction_aa"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "junction_aa",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "leadingedge": {
+        "column": [
+            "leadingEdge"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "leadingedge",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "lfcse": {
+        "column": [
+            "lfcSE"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "lfcse",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "log2err": {
+        "column": [
+            "log2err"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "log2err",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "log2foldchange": {
+        "column": [
+            "log2FoldChange"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "log2foldchange",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "logfc": {
+        "column": [
+            "logFC"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "logfc",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/rankings.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "method": {
+        "column": [
+            "method"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "method",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "nes": {
+        "column": [
+            "NES"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "nes",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "padj": {
+        "column": [
+            "padj"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "padj",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pathway": {
+        "column": [
+            "pathway"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pathway",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "productive": {
+        "column": [
+            "productive"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "productive",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pval": {
+        "column": [
+            "pval"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pval",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pvalue": {
+        "column": [
+            "pvalue"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pvalue",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "qvalue": {
+        "column": [
+            "qvalue"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "qvalue",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "rev_comp": {
+        "column": [
+            "rev_comp"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "rev_comp",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "sample": {
+        "column": [
+            "sample"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "sample",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "sequence": {
+        "column": [
+            "sequence"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "sequence",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "sequence_alignment": {
+        "column": [
+            "sequence_alignment"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "sequence_alignment",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "sequence_id": {
+        "column": [
+            "sequence_id"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "sequence_id",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "size": {
+        "column": [
+            "size"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "size",
+                "desc": ""
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "stat": {
+        "column": [
+            "stat"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "stat",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "unnamed_0": {
+        "column": [
+            "Unnamed: 0"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "unnamed_0",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "v": {
+        "column": [
+            "V"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "v",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_report.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "v_call": {
+        "column": [
+            "v_call"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "v_call",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "v_cigar": {
+        "column": [
+            "v_cigar"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "v_cigar",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "v_identity": {
+        "column": [
+            "v_identity"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "v_identity",
+                "desc": ""
+            },
+            {
+                "process": "Immune Clonotypes",
+                "file": "data/SRX11996006/TRUST4_airr.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "variable": {
+        "column": [
+            "variable"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "variable",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    }
+}
