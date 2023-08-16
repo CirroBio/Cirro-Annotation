@@ -1,0 +1,77 @@
+{"dsv":
+
+[
+
+  {
+
+        "url": "https://sourceforge.net/p/mageck/wiki/output/#sgrna_summary_txt",
+
+        "source": "$data_directory/mageck/[GENE]/rra.sgrna_summary.txt",
+
+        "name": "sgRNA Summary",
+
+        "desc": "sgRNA ranking results",
+
+        "tokens": [
+
+          {
+
+            "token": "[GENE]",
+
+            "name": "Gene",
+
+            "desc": "The targeting gene"
+
+          }
+
+        ],
+
+        "kwargs": {
+
+          "read": {
+
+            "sep": "\t",
+
+            "index_col": "sgrna"
+
+ 
+
+          },
+
+          "melt": {
+
+            
+
+          }
+
+        },
+
+        "cols": [
+
+          {
+
+            "col": "sgrna",
+
+            "name": "sgRNA",
+
+            "desc": "sgRNA ID"
+
+          },
+
+          {
+
+            "col": "Gene",
+
+            "name": "Gene",
+
+            "desc": "The targeting gene"
+
+          }
+
+        ]
+
+      }
+
+    ]
+
+  }

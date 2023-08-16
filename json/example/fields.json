@@ -1,0 +1,107 @@
+[
+
+    {        
+
+        "column": [
+
+            "id"
+
+        ],
+
+        "metadata": [
+
+            {
+
+                "process": "*",
+
+                "file": "*",
+
+                "name": "Identifier",
+
+                "desc": "This uniquely ids the row"
+
+            },
+
+            {
+
+                "process": "a",
+
+                "file": "aa",
+
+                "name": "",
+
+                "desc": ""
+
+            },
+
+            {
+
+                "process": "b",
+
+                "file": "bb",
+
+                "name": "",
+
+                "desc": ""
+
+            },
+
+            {
+
+                "process": "c",
+
+                "file": "cc",
+
+                "name": "",
+
+                "desc": ""
+
+            },
+
+            {
+
+                "process": "d",
+
+                "file": "dd",
+
+                "name": "",
+
+                "desc": ""
+
+            }
+
+        ]
+
+    },
+
+    {
+
+        "column": [
+
+            "p.value",
+
+            "pvalue",
+
+            "p-value"
+
+        ],
+
+        "metadata": [
+
+            {
+
+                "process": "*",
+
+                "file": "*",
+
+                "name": "P-value",
+
+                "desc": "Statistical significance of the association"
+
+            }
+
+        ]
+
+    }
+
+]
