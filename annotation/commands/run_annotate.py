@@ -14,6 +14,10 @@ from .ask_process import ask_process
 from .ask_dataset import ask_dataset
 from .ask_prompt import ask_prompt
 
+
+
+
+
 def read_csv(filename):
     df = pd.read_csv(filename, sep=None, engine='python')
     df = df.infer_objects()
@@ -46,6 +50,8 @@ def get_file_columns(root_dir, files, extensions: list[str]):
     results["columns"] = list(dict.fromkeys(results["columns"]))
     return results
 
+
+# List all files with relative path to root ["/dir/file.txt"]
 def get_file_list(root_directory):
     file_list = []
     for root, dirs, files in os.walk(os.path.join(root_directory, "data")):
@@ -55,6 +61,7 @@ def get_file_list(root_directory):
             file_list.append(relative_path)
     return file_list
 
+# Downloads Only Extensions And If Not Input Params Passed, will prompt
 def get_dataset(input_params: DownloadArguments, extensions: list[str])->str:
     cirro = DataPortalClient()
     projects = cirro.project.list()
@@ -105,6 +112,7 @@ def process_variable_columns(columns):
     return column_groups
 
 
+# Generates Regex Pattern From Uppercased Token [COLUMN_NAME]
 def process_variable_files(files):
     file_groups = []
     while (len(files) > 0):
@@ -112,7 +120,6 @@ def process_variable_files(files):
         print("Replace the part(s) of this path that are variable with a [column_name] wrapped in square brackets")
         print(file)
         file_pattern = ask("text", "", default=file)
-
         token_names = re.findall(r'\[([A-Z]+)\]', file_pattern)
         for token_name in token_names:
             regex_pattern = file_pattern.replace(f'[{token_name}]', r'(?P<{}>[^/]+)'.format(token_name))
@@ -171,11 +178,17 @@ def run_annotate(input_params: DownloadArguments):
     with open(os.path.join(os.getcwd(),"fields.json"), 'r') as file:
         col_metadata = json.load(file)
     columns_mapping = {obj['column']: obj for obj in col_metadata}
+
+    # Generate A List Of Standard Columns Which Do Not Exist In Columns Mapping
+    columns_missing = [col for col in columns_standard if col not in columns_mapping]
+
+
+    
+
+
     columns_standard = [columns_mapping[value] for value in columns_standard]
     
     columns_variable = process_variable_columns(columns_variable)
-
-    # Delete property "example" from files_variable
     for value in files_variable:
         del value['example']
         
@@ -191,6 +204,13 @@ def run_annotate(input_params: DownloadArguments):
         }
         
     }
+
+    # Split The dataset directory by / and determine the index of the directory called "temp"
+    temp_index = dataset_directory.split('/').index('temp') + 1
+    dataset_directory = '/'.join(dataset_directory.split('/')[0:temp_index])
+
+
+    
 
     with open(os.path.join(dataset_directory, "manifest.json"), 'w') as f:
         json.dump(manifest, f, indent=4)

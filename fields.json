@@ -1,11 +1,19 @@
 [
-    {"column": "id", "name": "ID", "desc": "Unique identifier for the row/item."},
+    {
+        "column": "id", 
+        "name": "ID", 
+        "desc": "Unique identifier for the row/item.",
+        "options": [
+            {"key": "value", "value": "value", "desc": "Value of the identifier."},
+            {"key": "type", "value": "type", "desc": "Type of identifier, such as 'gene' or 'sample'."},
+            {"key": "source", "value": "source", "desc": "Source or database for the identifier."}
+        ]
+    },
     {"column": "description", "name": "Description", "desc": "Brief description or note regarding the entry."},
     {"column": "nes", "name": "NES", "desc": "Normalized Enrichment Score."},
     {"column": "pvalue", "name": "P-value", "desc": "Probability value for statistical significance."},
     {"column": "p.adjust", "name": "Adjusted P-value", "desc": "P-value adjusted for multiple comparisons or tests."},
     {"column": "generatio", "name": "Gene Ratio", "desc": "Ratio representing gene-related data, possibly of targeted to total genes."},
-    {"column": "bgratio", "name": "Background Ratio", "desc": "Background ratio for comparison, often indicating non-targeted genes or features."},
     {"column": "geneid", "name": "Gene ID", "desc": "Unique identifier for the gene, often used for database lookup."},
     {"column": "genename", "name": "Gene Name", "desc": "Official or common name of the gene."},
     {"column": "count", "name": "Count", "desc": "Quantity or number of occurrences, possibly reads."},
@@ -84,5 +92,25 @@
     {"column": "treatment_control|fdr", "name": "FDR (Treatment-Control)", "desc": "False discovery rate comparing treatment to control."},
     {"column": "treatment_control|wald-p-value", "name": "Wald P-value (Treatment-Control)", "desc": "Wald test p-value comparing treatment to control."},
     {"column": "treatment_control|wald-fdr", "name": "Wald FDR (Treatment-Control)", "desc": "False discovery rate from the Wald test comparing treatment to control."},
-    {"column": "eff", "name": "Efficiency", "desc": "Efficiency metric, possibly indicating the effectiveness of a process or treatment."}
+    {"column": "eff", "name": "Efficiency", "desc": "Efficiency metric, possibly indicating the effectiveness of a process or treatment."},
+    {"column": "cov", "name": "Coverage", "desc": "Depth or amount of sequence data available for a specific location or gene."},
+    {"column": "cov_isg_lib", "name": "Coverage in ISG Library", "desc": "Depth or amount of sequence data for a specific location or gene within the ISG (Interferon-Stimulated Gene) library."},
+    {"column": "file", "name": "File", "desc": "Reference to the file or data source."},
+    {"column": "gene", "name": "Gene", "desc": "Specific gene or genetic element being referenced or analyzed."},
+    {"column": "isg", "name": "ISG Status", "desc": "Indicator for whether the gene or element is an Interferon-Stimulated Gene."},
+    {"column": "label", "name": "Label", "desc": "Label or tag associated with a specific sample, group, or condition."},
+    {"column": "lib", "name": "Library", "desc": "Reference to the library or collection of genes, elements, or sequences."},
+    {"column": "mapped", "name": "Mapped Reads", "desc": "Number of sequencing reads that were successfully aligned or mapped to a reference."},
+    {"column": "mean_depth", "name": "Mean Depth", "desc": "Average sequencing depth or coverage across a particular region or dataset."},
+    {"column": "median_depth", "name": "Median Depth", "desc": "Median sequencing depth or coverage across a particular region or dataset."},
+    {"column": "n_detected", "name": "Guides Detected", "desc": "Number of guides or sequences that were successfully detected or observed."},
+    {"column": "n_guides", "name": "Total Guides", "desc": "Total number of guides or sequences present or expected in the dataset."},
+    {"column": "n_hundred_reads", "name": "Guides with >=100 Reads", "desc": "Number of guides or sequences with 100 or more reads."},
+    {"column": "n_reads", "name": "Total Reads", "desc": "Total number of sequencing reads in the dataset."},
+    {"column": "n_ten_reads", "name": "Guides with >=10 Reads", "desc": "Number of guides or sequences with 10 or more reads."},
+    {"column": "n_undetected", "name": "Guides Undetected", "desc": "Number of guides or sequences that were not detected or observed in the dataset."},
+    {"column": "negselqc", "name": "Negative Selection QC", "desc": "Quality control metric or indicator related to negative selection."},
+    {"column": "negselqcgene", "name": "Negative Selection QC Gene", "desc": "Gene or element related to the negative selection quality control metric."},
+    {"column": "negselqcpval", "name": "Negative Selection QC P-value", "desc": "Probability value associated with the quality control metric for negative selection."}
+    
 ]
