@@ -7,8 +7,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "basemean",
-                "desc": ""
+                "name": "Base Mean",
+                "desc": "Base mean of the gene across samples"
             },
             {
                 "process": "Differential Expression",
