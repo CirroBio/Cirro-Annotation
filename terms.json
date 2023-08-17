@@ -8,7 +8,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "Base Mean",
-                "desc": "Base mean of the gene across samples"
+                "desc": "The average expression level of this gene across all samples"
             },
             {
                 "process": "Differential Expression",
@@ -32,8 +32,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "c",
-                "desc": ""
+                "name": "Constant Region",
+                "desc": "The portion of the immune receptor gene that encodes the constant domain of the receptor protein"
             },
             {
                 "process": "Immune Clonotypes",
@@ -57,8 +57,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "c_call",
-                "desc": ""
+                "name": "Clonotype Call",
+                "desc": "The name of the aligned C gene for the rearrangement"
             },
             {
                 "process": "Immune Clonotypes",
@@ -76,8 +76,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "cdr1",
-                "desc": ""
+                "name": "CDR1",
+                "desc": "The predicted CDR1 amino acid sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -95,8 +95,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "cdr2",
-                "desc": ""
+                "name": "CDR2",
+                "desc": "The predicted CDR2 amino acid sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -114,8 +114,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "cdr3aa",
-                "desc": ""
+                "name": "CDR3",
+                "desc": "The predicted CDR3 amino acid sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -139,8 +139,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "cdr3nt",
-                "desc": ""
+                "name": "CDR3nt",
+                "desc": "The predicted CDR3 nucleotide sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -164,8 +164,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "cell_id",
-                "desc": ""
+                "name": "Cell ID",
+                "desc": "Cell barcode defining the cell for the query sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -183,8 +183,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "cid",
-                "desc": ""
+                "name": "Consensus ID",
+                "desc": "The ID of this consensus sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -208,7 +208,7 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "cid_full_length",
+                "name": "Consensus ID Full-Length",
                 "desc": ""
             },
             {
@@ -233,8 +233,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "complete_vdj",
-                "desc": ""
+                "name": "Complete V(D)J",
+                "desc": "Whether the V(D)J recombination process is considered complete or not"
             },
             {
                 "process": "Immune Clonotypes",
