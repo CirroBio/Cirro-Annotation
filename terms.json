@@ -32,8 +32,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "Constant Region",
-                "desc": "The portion of the immune receptor gene that encodes the constant domain of the receptor protein"
+                "name": "C Gene Segment",
+                "desc": "The constant (C) gene segment identified within the analyzed TCR sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -57,8 +57,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "Clonotype Call",
-                "desc": "The name of the aligned C gene for the rearrangement"
+                "name": "C Gene Segment Clonotype Call",
+                "desc": "The clonotype call associated with the identified constant (C) gene segment."
             },
             {
                 "process": "Immune Clonotypes",
@@ -76,8 +76,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "CDR1",
-                "desc": "The predicted CDR1 amino acid sequence"
+                "name": "CDR1 Amino Acid",
+                "desc": "The predicted amino acid sequence for the Complemntarity-Determining Region 1 (CDR1) of the T-cell receptor (TCR) in the dataset"
             },
             {
                 "process": "Immune Clonotypes",
@@ -95,8 +95,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "CDR2",
-                "desc": "The predicted CDR2 amino acid sequence"
+                "name": "CDR2 Amino Acid",
+                "desc": "The predicted amino acid sequence for the Complemntarity-Determining Region 2 (CDR2) of the T-cell receptor (TCR) in the dataset"
             },
             {
                 "process": "Immune Clonotypes",
@@ -114,8 +114,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "CDR3",
-                "desc": "The predicted CDR3 amino acid sequence"
+                "name": "CDR3 Amino Acid",
+                "desc": "The predicted amino acid sequence for the Complemntarity-Determining Region 3 (CDR3) of the T-cell receptor (TCR) in the dataset"
             },
             {
                 "process": "Immune Clonotypes",
@@ -139,8 +139,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "CDR3nt",
-                "desc": "The predicted CDR3 nucleotide sequence"
+                "name": "CDR3 Nucleotide Sequence",
+                "desc": "The predicted nucleotide sequence for the Complementarity-Determining Region 3 (CDR3) of the T-cell receptor (TCR) in the dataset"
             },
             {
                 "process": "Immune Clonotypes",
@@ -208,8 +208,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "Consensus ID Full-Length",
-                "desc": ""
+                "name": "Contig Length Status",
+                "desc": "True or False value indicating if the contig was declared as full-length"
             },
             {
                 "process": "Immune Clonotypes",
@@ -233,8 +233,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "Complete V(D)J",
-                "desc": "Whether the V(D)J recombination process is considered complete or not"
+                "name": "V(D)J Recombination Status",
+                "desc": "True or False value indicating if the V(D)J recombination process is considered complete or not"
             },
             {
                 "process": "Immune Clonotypes",
@@ -252,8 +252,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "consensus_count",
-                "desc": ""
+                "name": "Consensus Count",
+                "desc": "The number of reads associated with this rearrangement"
             },
             {
                 "process": "Immune Clonotypes",
@@ -271,8 +271,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "count",
-                "desc": ""
+                "name": "Count",
+                "desc": "Raw count of occurrence of the clonotype within the analyzed sample"
             },
             {
                 "process": "Immune Clonotypes",
@@ -296,8 +296,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "d",
-                "desc": ""
+                "name": "D Gene Segment",
+                "desc": "The diversity (D) gene segment identified within the analyzed TCR sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -321,8 +321,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "d_call",
-                "desc": ""
+                "name": "D Gene Segment Clonotype Call",
+                "desc": "The name of the aligned D gene for the rearrangement"
             },
             {
                 "process": "Immune Clonotypes",
@@ -340,8 +340,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "d_cigar",
-                "desc": ""
+                "name": "D Gene CIGAR String",
+                "desc": "The CIGAR string of the D gene alignment"
             },
             {
                 "process": "Immune Clonotypes",
@@ -359,8 +359,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "es",
-                "desc": ""
+                "name": "Enrichment Score",
+                "desc": "Magnitude of gene set enrichment"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -378,8 +378,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "frequency",
-                "desc": ""
+                "name": "Frequency",
+                "desc": "Relative abundance of the clonotype within the analyzed sample"
             },
             {
                 "process": "Immune Clonotypes",
@@ -403,8 +403,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "gene_id",
-                "desc": ""
+                "name": "Gene ID",
+                "desc": "Unique gene identifier"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -428,8 +428,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "germline_alignment",
-                "desc": ""
+                "name": "Germline Alignment",
+                "desc": "The assembled, aligned, full-length inferred germline sequence of the aligned sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -447,8 +447,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "j",
-                "desc": ""
+                "name": "J Gene Segment",
+                "desc": "The joining (J) gene segment identified within the analyzed TCR sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -472,8 +472,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "j_call",
-                "desc": ""
+                "name": "J Gene Segment Clonotype Call",
+                "desc": "The clonotype call associated with the identified joining (J) gene segment."
             },
             {
                 "process": "Immune Clonotypes",
