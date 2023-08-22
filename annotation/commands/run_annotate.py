@@ -1,6 +1,5 @@
 import re
 import os
-import re
 import glob
 import pandas as pd
 import json
@@ -52,10 +51,15 @@ def get_file_columns(root_dir, files, extensions: list[str]):
 
 
 # List all files with relative path to root ["/dir/file.txt"]
-def get_file_list(root_directory):
+def get_file_list(root_directory, extensions: list[str]):
     file_list = []
     for root, dirs, files in os.walk(os.path.join(root_directory, "data")):
         for file in files:
+
+            # Skip files that are not of the correct extension
+            if not any(file.endswith(ext) for ext in extensions):
+                continue
+
             file_path = os.path.join(root, file)
             relative_path = os.path.relpath(file_path, root_directory)
             file_list.append(relative_path)
@@ -101,31 +105,37 @@ def process_variable_columns(columns):
     column_groups = []
     while (len(columns) > 0):
         selected_columns = ask("checkbox", "Select all columns that relate to the same variable", choices=columns)
-        selected_columns_name = ask("text", "Enter the name of this variable")
-        selected_columns_desc = ask("text", "Enter a description of this variable")
+        selected_columns_name = ask("text", "Enter a column name of this variable")
+        selected_columns_desc = ask("text", "Enter a column description of this variable")
+        selected_value_name = ask("text", "Enter a value name of this variable")
+        selected_value_desc = ask("text", "Enter a value description of this variable")
         columns = [col for col in columns if col not in selected_columns]
         column_groups.append({
             "columns": selected_columns,
             "name": selected_columns_name,
-            "desc": selected_columns_desc
+            "desc": selected_columns_desc,
+            "value_name": selected_value_name,
+            "value_desc": selected_value_desc
         })
     return column_groups
 
 
 # Generates Regex Pattern From Uppercased Token [COLUMN_NAME]
 def process_variable_files(files):
+
     file_groups = []
+    token_metadata = []
     while (len(files) > 0):
         file = files[0]
         print("Replace the part(s) of this path that are variable with a [column_name] wrapped in square brackets")
         print(file)
         file_pattern = ask("text", "", default=file)
-        token_names = re.findall(r'\[([A-Z]+)\]', file_pattern)
+        token_names = re.findall(r'\[(\w+)\]', file_pattern)
+        regex_pattern = file_pattern
         for token_name in token_names:
-            regex_pattern = file_pattern.replace(f'[{token_name}]', r'(?P<{}>[^/]+)'.format(token_name))
-        
+            regex_pattern = regex_pattern.replace(f'[{token_name}]', r'(?P<{}>[^/]+)'.format(token_name))
+
         matches = []
-        
         for file in files:
             match = re.match(regex_pattern, file)
             if match:
@@ -135,7 +145,27 @@ def process_variable_files(files):
         
         if (len(matches) > 0):
             print(str(len(matches)) + " files matched")
+            for token in token_names:
+
+                # If Token Already Exists In Metadata Then Use It As Defaults To Prompt
+                if any(token == obj['token'] for obj in token_metadata):
+                    token_metadata_obj = next(obj for obj in token_metadata if obj['token'] == token)
+                    token_metadata_name = token_metadata_obj['name']
+                    token_metadata_desc = token_metadata_obj['desc']
+                else:
+                    token_metadata_name = ""
+                    token_metadata_desc = ""
+
+                token_metadata.append({
+                    "token": token,
+                    "name": ask("text", f"Enter a name for this {token}", default=token_metadata_name),
+                    "desc": ask("text", f"Enter a description for this {token}", default=token_metadata_desc),
+                })
+
             file_groups.append({
+                "name": ask("text", "Enter a name for this group of files"),
+                "desc": ask("text", "Enter a description for this group of files"),
+                "tokens": token_metadata,
                 "example": matches,
                 "pattern": file_pattern,
                 "regex": regex_pattern,
@@ -144,7 +174,83 @@ def process_variable_files(files):
     return file_groups
 
 
+def generate_variable_file_manifest(files, columns_mapping, columns_variable):
+    transforms = []
+    for file in files:
+
+
+        # Filter Columns That Don't exist in columns_mapping
+        columns_standard_in_file = [col for col in file["columns"] if col in columns_mapping]
+        columns_standard_in_file = [columns_mapping[col] for col in columns_standard_in_file]
     
+
+        transform = {
+            "command": "hot.Parquet",
+            "params": {
+                "source": file['pattern'].replace('data', '$data_directory'),
+                "target": ask("text", f"Enter a file name for {file['pattern']}: ", default=file['pattern'].split('/')[-1]),
+                "name": file['name'],
+                "desc": file['desc'],
+                "cols": columns_standard_in_file,
+                "concat": file['tokens']
+            }
+        }
+
+        # Find the object in columns_variable that has the non-standard columns in it
+        columns_variable_in_file = [obj for obj in columns_variable if all(col in obj['columns'] for col in file["columns"])]
+        if len(columns_variable_in_file) > 0:
+            transform["params"]["melt"] = {
+                "key": {
+                    "name": columns_variable_in_file[0]['name'],
+                    "desc": columns_variable_in_file[0]['desc'],
+                },
+                "value": {
+                    "name": columns_variable_in_file[0]['value_name'],
+                    "desc": columns_variable_in_file[0]['value_desc'],
+                }
+            }
+        
+        transforms.append(transform)
+
+    return transforms
+
+    
+def generate_standard_file_manifest(files, columns_mapping, columns_variable):
+     transforms = []
+     for file in files:
+        # Filter Columns That Don't exist in columns_mapping
+        columns_standard_in_file = [col for col in file["columns"] if col in columns_mapping]
+        columns_standard_in_file = [columns_mapping[col] for col in columns_standard_in_file]
+    
+
+        transform = {
+            "command": "hot.Parquet",
+            "params": {
+                "source": file['file'].replace('data', '$data_directory'),
+                "target": ask("text", f"Enter a file name for {file['file']}: ", default=file['file'].split('/')[-1]),
+                "name": ask("text", f"Enter a friendly name for {file['file']}: "),
+                "desc": ask("text", f"Enter a description for {file['file']}: "),
+                "cols": columns_standard_in_file
+            }
+        }
+
+        # Find the object in columns_variable that has the non-standard columns in it
+        columns_variable_in_file = [obj for obj in columns_variable if all(col in obj['columns'] for col in file["columns"])]
+        if len(columns_variable_in_file) > 0:
+            transform["params"]["melt"] = {
+                "key": {
+                    "name": columns_variable_in_file[0]['name'],
+                    "desc": columns_variable_in_file[0]['desc'],
+                },
+                "value": {
+                    "name": columns_variable_in_file[0]['value_name'],
+                    "desc": columns_variable_in_file[0]['value_desc'],
+                }
+            }
+        
+        transforms.append(transform)
+        
+     return transforms
         
 
 
@@ -154,12 +260,12 @@ def run_annotate(input_params: DownloadArguments):
 
     dataset_directory = get_dataset(input_params, extensions)
 
-    files = get_file_list(dataset_directory)
+    # Process Files
+    files = get_file_list(dataset_directory, extensions)
     files.sort()
     files_variable = ask("checkbox", "Select all files that vary by run?", choices=files)
     files_standard = [file for file in files if file not in files_variable]
     files_variable = process_variable_files(files_variable)
-
     file_columns = get_file_columns(dataset_directory, files, extensions)
 
     
@@ -175,42 +281,46 @@ def run_annotate(input_params: DownloadArguments):
     columns_standard = [col for col in columns if col not in columns_variable]
 
     # Load Fields.json file
-    with open(os.path.join(os.getcwd(),"fields.json"), 'r') as file:
+    with open(os.path.join(os.getcwd(),"json/example/gpt/fields.json"), 'r') as file:
         col_metadata = json.load(file)
-    columns_mapping = {obj['column']: obj for obj in col_metadata}
+    columns_mapping = {obj['col']: obj for obj in col_metadata}
 
     # Generate A List Of Standard Columns Which Do Not Exist In Columns Mapping
     columns_missing = [col for col in columns_standard if col not in columns_mapping]
 
 
-    
+    # If Columns Missing, Ask User To Map Them
+    if len(columns_missing) > 0:
+        print("The following columns are missing from the fields.json file")
+        print(columns_missing)
+        print("Please map them to a variable")
+        for col in columns_missing:
+            columns_mapping[col] = {
+                "col": col,
+                "name": ask("text", f"Enter a name for this {col}: "),
+                "desc": ask("text", f"Enter a description for this {col}: "),
+            }
 
+        # Add New Columns To Fields.json File
+        col_metadata.extend(columns_mapping.values())
+        with open(os.path.join(os.getcwd(),"json/example/gpt/fields.json"), 'w') as file:
+            json.dump(col_metadata, file, indent=4)
 
     columns_standard = [columns_mapping[value] for value in columns_standard]
-    
     columns_variable = process_variable_columns(columns_variable)
-    for value in files_variable:
-        del value['example']
-        
-
-    manifest = {
-        "files": { 
-            "standard": files_standard,
-            "variable": files_variable
-        },
-        "columns": {
-            "standard": columns_standard,
-            "variable": columns_variable
-        }
-        
+    standard_metadata = generate_standard_file_manifest(files_standard, columns_mapping, columns_variable)
+    variable_metadata = generate_variable_file_manifest(files_variable, columns_mapping, columns_variable)
+   
+    metadata = {
+       "commands": [
+              standard_metadata,
+                variable_metadata
+         ]
     }
 
     # Split The dataset directory by / and determine the index of the directory called "temp"
     temp_index = dataset_directory.split('/').index('temp') + 1
     dataset_directory = '/'.join(dataset_directory.split('/')[0:temp_index])
 
-
-    
-
     with open(os.path.join(dataset_directory, "manifest.json"), 'w') as f:
-        json.dump(manifest, f, indent=4)
+        json.dump(metadata, f, indent=4)

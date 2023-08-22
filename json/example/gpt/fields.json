@@ -1,0 +1,972 @@
+[
+    {
+        "col": "id",
+        "name": "ID",
+        "desc": "Unique identifier for the row/item."
+    },
+    {
+        "col": "description",
+        "name": "Description",
+        "desc": "Brief description or note regarding the entry."
+    },
+    {
+        "col": "nes",
+        "name": "NES",
+        "desc": "Normalized Enrichment Score."
+    },
+    {
+        "col": "pvalue",
+        "name": "P-value",
+        "desc": "Probability value for statistical significance."
+    },
+    {
+        "col": "p.adjust",
+        "name": "Adjusted P-value",
+        "desc": "P-value adjusted for multiple comparisons or tests."
+    },
+    {
+        "col": "generatio",
+        "name": "Gene Ratio",
+        "desc": "Ratio representing gene-related data, possibly of targeted to total genes."
+    },
+    {
+        "col": "geneid",
+        "name": "Gene ID",
+        "desc": "Unique identifier for the gene, often used for database lookup."
+    },
+    {
+        "col": "genename",
+        "name": "Gene Name",
+        "desc": "Official or common name of the gene."
+    },
+    {
+        "col": "count",
+        "name": "Count",
+        "desc": "Quantity or number of occurrences, possibly reads."
+    },
+    {
+        "col": "score",
+        "name": "Score",
+        "desc": "Assigned score or value, often indicating significance or impact."
+    },
+    {
+        "col": "fdr",
+        "name": "FDR",
+        "desc": "False Discovery Rate, indicating adjusted significance."
+    },
+    {
+        "col": "logfdr",
+        "name": "Log FDR",
+        "desc": "Log-transformed False Discovery Rate, for scale normalization."
+    },
+    {
+        "col": "entrezid",
+        "name": "Entrez ID",
+        "desc": "Gene identifier from the Entrez database."
+    },
+    {
+        "col": "symbol",
+        "name": "Gene Symbol",
+        "desc": "Symbolic or abbreviated representation of the gene."
+    },
+    {
+        "col": "humangene",
+        "name": "Human Gene",
+        "desc": "Indicator or identifier for the human gene version or homolog."
+    },
+    {
+        "col": "gene",
+        "name": "Gene",
+        "desc": "Name or identifier for the gene, often similar to 'Gene Name'."
+    },
+    {
+        "col": "treatment_control",
+        "name": "Treatment Control",
+        "desc": "Data or metric comparing treatment to control conditions."
+    },
+    {
+        "col": "depmap",
+        "name": "DepMap",
+        "desc": "Dependency Map identifier or related metric, linking to genetic dependencies."
+    },
+    {
+        "col": "sgrna",
+        "name": "sgRNA",
+        "desc": "Single-guide RNA identifier or sequence, used for CRISPR targeting."
+    },
+    {
+        "col": "file",
+        "name": "File",
+        "desc": "Associated file name or path, indicating data source."
+    },
+    {
+        "col": "label",
+        "name": "Label",
+        "desc": "Assigned label or tag, for categorization or clarification."
+    },
+    {
+        "col": "reads",
+        "name": "Reads",
+        "desc": "Number of sequence reads or count data."
+    },
+    {
+        "col": "mapped",
+        "name": "Mapped",
+        "desc": "Count of reads or sequences successfully mapped to a reference genome or database."
+    },
+    {
+        "col": "percentage",
+        "name": "Percentage",
+        "desc": "Percentage metric, possibly representing mapped reads or gene coverage."
+    },
+    {
+        "col": "totalsgrnas",
+        "name": "Total sgRNAs",
+        "desc": "Total number of sgRNAs in a sample or experiment."
+    },
+    {
+        "col": "zerocounts",
+        "name": "Zero Counts",
+        "desc": "Number of items with a count of zero."
+    },
+    {
+        "col": "giniindex",
+        "name": "Gini Index",
+        "desc": "Measure of statistical dispersion, indicating inequality in a distribution."
+    },
+    {
+        "col": "negselqc",
+        "name": "Negative Selection QC",
+        "desc": "Quality control metric for negative selection."
+    },
+    {
+        "col": "negselqcpval",
+        "name": "Neg Sel QC P-value",
+        "desc": "Statistical significance for the negative selection quality control."
+    },
+    {
+        "col": "negselqcpvalpermutation",
+        "name": "Neg Sel QC Permutation P-value",
+        "desc": "Permutation-derived p-value for negative selection quality control."
+    },
+    {
+        "col": "negselqcpvalpermutationfdr",
+        "name": "Neg Sel QC Permutation FDR",
+        "desc": "False discovery rate for permutation-based negative selection QC."
+    },
+    {
+        "col": "negselqcgene",
+        "name": "Neg Sel QC Gene",
+        "desc": "Gene associated with negative selection quality control."
+    },
+    {
+        "col": "sample",
+        "name": "Sample",
+        "desc": "Sample identifier or description."
+    },
+    {
+        "col": "group",
+        "name": "Group",
+        "desc": "Assigned group or category for the entry."
+    },
+    {
+        "col": "n_guides",
+        "name": "Number of Guides",
+        "desc": "Total number of guide RNAs associated."
+    },
+    {
+        "col": "n_detected",
+        "name": "Detected Count",
+        "desc": "Count of detected items, such as genes or sgRNAs."
+    },
+    {
+        "col": "n_undetected",
+        "name": "Undetected Count",
+        "desc": "Count of items not detected."
+    },
+    {
+        "col": "n_reads",
+        "name": "Number of Reads",
+        "desc": "Total number of sequence reads."
+    },
+    {
+        "col": "mean_depth",
+        "name": "Mean Depth",
+        "desc": "Average read depth across the sample or region."
+    },
+    {
+        "col": "median_depth",
+        "name": "Median Depth",
+        "desc": "Median read depth across the sample or region."
+    },
+    {
+        "col": "n_ten_reads",
+        "name": "Count of 10 Reads",
+        "desc": "Number of items or regions with at least 10 reads."
+    },
+    {
+        "col": "n_hundred_reads",
+        "name": "Count of 100 Reads",
+        "desc": "Number of items or regions with at least 100 reads."
+    },
+    {
+        "col": "pool",
+        "name": "Pool",
+        "desc": "Pool identifier or description, representing a batch or group of samples."
+    },
+    {
+        "col": "p.high",
+        "name": "High P-value",
+        "desc": "P-value indicating higher range statistical significance."
+    },
+    {
+        "col": "prob",
+        "name": "Probability",
+        "desc": "Probability metric, potentially associated with an event's likelihood."
+    },
+    {
+        "col": "chosen",
+        "name": "Chosen",
+        "desc": "Indicator if an item was selected or chosen for analysis or further processing."
+    },
+    {
+        "col": "p.low",
+        "name": "Low P-value",
+        "desc": "P-value indicating lower range statistical significance."
+    },
+    {
+        "col": "group_id",
+        "name": "Group ID",
+        "desc": "Identifier for the assigned group or category."
+    },
+    {
+        "col": "items_in_group",
+        "name": "Items in Group",
+        "desc": "Number of items or entities within a specific group."
+    },
+    {
+        "col": "lo_value",
+        "name": "LO Value",
+        "desc": "Potential lower outlier value or a lower threshold."
+    },
+    {
+        "col": "p",
+        "name": "P-value",
+        "desc": "Probability value indicating statistical significance."
+    },
+    {
+        "col": "goodsgrna",
+        "name": "Good sgRNA",
+        "desc": "Indicator or count of single-guide RNAs deemed 'good' or effective."
+    },
+    {
+        "col": "num",
+        "name": "Number",
+        "desc": "Generic numeric value or count."
+    },
+    {
+        "col": "neg|score",
+        "name": "Negative Score",
+        "desc": "Score associated with negative selection or effect."
+    },
+    {
+        "col": "neg|p-value",
+        "name": "Negative P-value",
+        "desc": "P-value associated with negative selection or effect."
+    },
+    {
+        "col": "neg|fdr",
+        "name": "Negative FDR",
+        "desc": "False discovery rate associated with negative selection."
+    },
+    {
+        "col": "neg|rank",
+        "name": "Negative Rank",
+        "desc": "Ranking based on negative selection or effect."
+    },
+    {
+        "col": "neg|goodsgrna",
+        "name": "Negative Good sgRNA",
+        "desc": "Good or effective sgRNA count associated with negative selection."
+    },
+    {
+        "col": "neg|lfc",
+        "name": "Negative Log Fold Change",
+        "desc": "Logarithm of fold change in negative context."
+    },
+    {
+        "col": "pos|score",
+        "name": "Positive Score",
+        "desc": "Score associated with positive selection or effect."
+    },
+    {
+        "col": "pos|p-value",
+        "name": "Positive P-value",
+        "desc": "P-value associated with positive selection or effect."
+    },
+    {
+        "col": "pos|fdr",
+        "name": "Positive FDR",
+        "desc": "False discovery rate associated with positive selection."
+    },
+    {
+        "col": "pos|rank",
+        "name": "Positive Rank",
+        "desc": "Ranking based on positive selection or effect."
+    },
+    {
+        "col": "pos|goodsgrna",
+        "name": "Positive Good sgRNA",
+        "desc": "Good or effective sgRNA count associated with positive selection."
+    },
+    {
+        "col": "pos|lfc",
+        "name": "Positive Log Fold Change",
+        "desc": "Logarithm of fold change in positive context."
+    },
+    {
+        "col": "control_count",
+        "name": "Control Count",
+        "desc": "Number of items or reads in control condition."
+    },
+    {
+        "col": "treatment_count",
+        "name": "Treatment Count",
+        "desc": "Number of items or reads in treatment condition."
+    },
+    {
+        "col": "control_mean",
+        "name": "Control Mean",
+        "desc": "Average metric for control samples or condition."
+    },
+    {
+        "col": "treat_mean",
+        "name": "Treatment Mean",
+        "desc": "Average metric for treatment samples or condition."
+    },
+    {
+        "col": "lfc",
+        "name": "Log Fold Change",
+        "desc": "Logarithm of the ratio of treatment to control, indicating differential expression or effect."
+    },
+    {
+        "col": "control_var",
+        "name": "Control Variance",
+        "desc": "Measure of dispersion for the control group."
+    },
+    {
+        "col": "adj_var",
+        "name": "Adjusted Variance",
+        "desc": "Variance metric that has been adjusted for potential confounders."
+    },
+    {
+        "col": "p.twosided",
+        "name": "Two-sided P-value",
+        "desc": "P-value from a two-sided statistical test, assessing both directions of effect."
+    },
+    {
+        "col": "high_in_treatment",
+        "name": "High in Treatment",
+        "desc": "Indicator or count of items high or upregulated in treatment."
+    },
+    {
+        "col": "neg|rra",
+        "name": "Negative RRA",
+        "desc": "Robust rank aggregation in a negative context."
+    },
+    {
+        "col": "neg|goodgene",
+        "name": "Negative Good Gene",
+        "desc": "Good or effective gene count in negative context."
+    },
+    {
+        "col": "pos|rra",
+        "name": "Positive RRA",
+        "desc": "Robust rank aggregation in a positive context."
+    },
+    {
+        "col": "pos|goodgene",
+        "name": "Positive Good Gene",
+        "desc": "Good or effective gene count in positive context."
+    },
+    {
+        "col": "treatment_control|beta",
+        "name": "Beta (Treatment-Control)",
+        "desc": "Beta coefficient comparing treatment to control."
+    },
+    {
+        "col": "treatment_control|z",
+        "name": "Z-score (Treatment-Control)",
+        "desc": "Z-score comparing treatment effect size to control."
+    },
+    {
+        "col": "treatment_control|p-value",
+        "name": "P-value (Treatment-Control)",
+        "desc": "Statistical significance comparing treatment to control."
+    },
+    {
+        "col": "treatment_control|fdr",
+        "name": "FDR (Treatment-Control)",
+        "desc": "False discovery rate comparing treatment to control."
+    },
+    {
+        "col": "treatment_control|wald-p-value",
+        "name": "Wald P-value (Treatment-Control)",
+        "desc": "Wald test p-value comparing treatment to control."
+    },
+    {
+        "col": "treatment_control|wald-fdr",
+        "name": "Wald FDR (Treatment-Control)",
+        "desc": "False discovery rate from the Wald test comparing treatment to control."
+    },
+    {
+        "col": "eff",
+        "name": "Efficiency",
+        "desc": "Efficiency metric, possibly indicating the effectiveness of a process or treatment."
+    },
+    {
+        "col": "cov",
+        "name": "Coverage",
+        "desc": "Depth or amount of sequence data available for a specific location or gene."
+    },
+    {
+        "col": "cov_isg_lib",
+        "name": "Coverage in ISG Library",
+        "desc": "Depth or amount of sequence data for a specific location or gene within the ISG (Interferon-Stimulated Gene) library."
+    },
+    {
+        "col": "file",
+        "name": "File",
+        "desc": "Reference to the file or data source."
+    },
+    {
+        "col": "gene",
+        "name": "Gene",
+        "desc": "Specific gene or genetic element being referenced or analyzed."
+    },
+    {
+        "col": "isg",
+        "name": "ISG Status",
+        "desc": "Indicator for whether the gene or element is an Interferon-Stimulated Gene."
+    },
+    {
+        "col": "label",
+        "name": "Label",
+        "desc": "Label or tag associated with a specific sample, group, or condition."
+    },
+    {
+        "col": "lib",
+        "name": "Library",
+        "desc": "Reference to the library or collection of genes, elements, or sequences."
+    },
+    {
+        "col": "mapped",
+        "name": "Mapped Reads",
+        "desc": "Number of sequencing reads that were successfully aligned or mapped to a reference."
+    },
+    {
+        "col": "mean_depth",
+        "name": "Mean Depth",
+        "desc": "Average sequencing depth or coverage across a particular region or dataset."
+    },
+    {
+        "col": "median_depth",
+        "name": "Median Depth",
+        "desc": "Median sequencing depth or coverage across a particular region or dataset."
+    },
+    {
+        "col": "n_detected",
+        "name": "Guides Detected",
+        "desc": "Number of guides or sequences that were successfully detected or observed."
+    },
+    {
+        "col": "n_guides",
+        "name": "Total Guides",
+        "desc": "Total number of guides or sequences present or expected in the dataset."
+    },
+    {
+        "col": "n_hundred_reads",
+        "name": "Guides with >=100 Reads",
+        "desc": "Number of guides or sequences with 100 or more reads."
+    },
+    {
+        "col": "n_reads",
+        "name": "Total Reads",
+        "desc": "Total number of sequencing reads in the dataset."
+    },
+    {
+        "col": "n_ten_reads",
+        "name": "Guides with >=10 Reads",
+        "desc": "Number of guides or sequences with 10 or more reads."
+    },
+    {
+        "col": "n_undetected",
+        "name": "Guides Undetected",
+        "desc": "Number of guides or sequences that were not detected or observed in the dataset."
+    },
+    {
+        "col": "negselqc",
+        "name": "Negative Selection QC",
+        "desc": "Quality control metric or indicator related to negative selection."
+    },
+    {
+        "col": "negselqcgene",
+        "name": "Negative Selection QC Gene",
+        "desc": "Gene or element related to the negative selection quality control metric."
+    },
+    {
+        "col": "negselqcpval",
+        "name": "Negative Selection QC P-value",
+        "desc": "Probability value associated with the quality control metric for negative selection."
+    },
+    {
+        "col": "id",
+        "name": "ID",
+        "desc": "Unique identifier for the row/item."
+    },
+    {
+        "col": "description",
+        "name": "Description",
+        "desc": "Brief description or note regarding the entry."
+    },
+    {
+        "col": "nes",
+        "name": "NES",
+        "desc": "Normalized Enrichment Score."
+    },
+    {
+        "col": "pvalue",
+        "name": "P-value",
+        "desc": "Probability value for statistical significance."
+    },
+    {
+        "col": "p.adjust",
+        "name": "Adjusted P-value",
+        "desc": "P-value adjusted for multiple comparisons or tests."
+    },
+    {
+        "col": "generatio",
+        "name": "Gene Ratio",
+        "desc": "Ratio representing gene-related data, possibly of targeted to total genes."
+    },
+    {
+        "col": "geneid",
+        "name": "Gene ID",
+        "desc": "Unique identifier for the gene, often used for database lookup."
+    },
+    {
+        "col": "genename",
+        "name": "Gene Name",
+        "desc": "Official or common name of the gene."
+    },
+    {
+        "col": "count",
+        "name": "Count",
+        "desc": "Quantity or number of occurrences, possibly reads."
+    },
+    {
+        "col": "score",
+        "name": "Score",
+        "desc": "Assigned score or value, often indicating significance or impact."
+    },
+    {
+        "col": "fdr",
+        "name": "FDR",
+        "desc": "False Discovery Rate, indicating adjusted significance."
+    },
+    {
+        "col": "logfdr",
+        "name": "Log FDR",
+        "desc": "Log-transformed False Discovery Rate, for scale normalization."
+    },
+    {
+        "col": "entrezid",
+        "name": "Entrez ID",
+        "desc": "Gene identifier from the Entrez database."
+    },
+    {
+        "col": "symbol",
+        "name": "Gene Symbol",
+        "desc": "Symbolic or abbreviated representation of the gene."
+    },
+    {
+        "col": "humangene",
+        "name": "Human Gene",
+        "desc": "Indicator or identifier for the human gene version or homolog."
+    },
+    {
+        "col": "gene",
+        "name": "Gene",
+        "desc": "Specific gene or genetic element being referenced or analyzed."
+    },
+    {
+        "col": "treatment_control",
+        "name": "Treatment Control",
+        "desc": "Data or metric comparing treatment to control conditions."
+    },
+    {
+        "col": "depmap",
+        "name": "DepMap",
+        "desc": "Dependency Map identifier or related metric, linking to genetic dependencies."
+    },
+    {
+        "col": "sgrna",
+        "name": "sgRNA",
+        "desc": "Single-guide RNA identifier or sequence, used for CRISPR targeting."
+    },
+    {
+        "col": "file",
+        "name": "File",
+        "desc": "Reference to the file or data source."
+    },
+    {
+        "col": "label",
+        "name": "Label",
+        "desc": "Label or tag associated with a specific sample, group, or condition."
+    },
+    {
+        "col": "reads",
+        "name": "Reads",
+        "desc": "Number of sequence reads or count data."
+    },
+    {
+        "col": "mapped",
+        "name": "Mapped Reads",
+        "desc": "Number of sequencing reads that were successfully aligned or mapped to a reference."
+    },
+    {
+        "col": "percentage",
+        "name": "Percentage",
+        "desc": "Percentage metric, possibly representing mapped reads or gene coverage."
+    },
+    {
+        "col": "totalsgrnas",
+        "name": "Total sgRNAs",
+        "desc": "Total number of sgRNAs in a sample or experiment."
+    },
+    {
+        "col": "zerocounts",
+        "name": "Zero Counts",
+        "desc": "Number of items with a count of zero."
+    },
+    {
+        "col": "giniindex",
+        "name": "Gini Index",
+        "desc": "Measure of statistical dispersion, indicating inequality in a distribution."
+    },
+    {
+        "col": "negselqc",
+        "name": "Negative Selection QC",
+        "desc": "Quality control metric or indicator related to negative selection."
+    },
+    {
+        "col": "negselqcpval",
+        "name": "Negative Selection QC P-value",
+        "desc": "Probability value associated with the quality control metric for negative selection."
+    },
+    {
+        "col": "negselqcpvalpermutation",
+        "name": "Neg Sel QC Permutation P-value",
+        "desc": "Permutation-derived p-value for negative selection quality control."
+    },
+    {
+        "col": "negselqcpvalpermutationfdr",
+        "name": "Neg Sel QC Permutation FDR",
+        "desc": "False discovery rate for permutation-based negative selection QC."
+    },
+    {
+        "col": "negselqcgene",
+        "name": "Negative Selection QC Gene",
+        "desc": "Gene or element related to the negative selection quality control metric."
+    },
+    {
+        "col": "sample",
+        "name": "Sample",
+        "desc": "Sample identifier or description."
+    },
+    {
+        "col": "group",
+        "name": "Group",
+        "desc": "Assigned group or category for the entry."
+    },
+    {
+        "col": "n_guides",
+        "name": "Total Guides",
+        "desc": "Total number of guides or sequences present or expected in the dataset."
+    },
+    {
+        "col": "n_detected",
+        "name": "Guides Detected",
+        "desc": "Number of guides or sequences that were successfully detected or observed."
+    },
+    {
+        "col": "n_undetected",
+        "name": "Guides Undetected",
+        "desc": "Number of guides or sequences that were not detected or observed in the dataset."
+    },
+    {
+        "col": "n_reads",
+        "name": "Total Reads",
+        "desc": "Total number of sequencing reads in the dataset."
+    },
+    {
+        "col": "mean_depth",
+        "name": "Mean Depth",
+        "desc": "Average sequencing depth or coverage across a particular region or dataset."
+    },
+    {
+        "col": "median_depth",
+        "name": "Median Depth",
+        "desc": "Median sequencing depth or coverage across a particular region or dataset."
+    },
+    {
+        "col": "n_ten_reads",
+        "name": "Guides with >=10 Reads",
+        "desc": "Number of guides or sequences with 10 or more reads."
+    },
+    {
+        "col": "n_hundred_reads",
+        "name": "Guides with >=100 Reads",
+        "desc": "Number of guides or sequences with 100 or more reads."
+    },
+    {
+        "col": "pool",
+        "name": "Pool",
+        "desc": "Pool identifier or description, representing a batch or group of samples."
+    },
+    {
+        "col": "p.high",
+        "name": "High P-value",
+        "desc": "P-value indicating higher range statistical significance."
+    },
+    {
+        "col": "prob",
+        "name": "Probability",
+        "desc": "Probability metric, potentially associated with an event's likelihood."
+    },
+    {
+        "col": "chosen",
+        "name": "Chosen",
+        "desc": "Indicator if an item was selected or chosen for analysis or further processing."
+    },
+    {
+        "col": "p.low",
+        "name": "Low P-value",
+        "desc": "P-value indicating lower range statistical significance."
+    },
+    {
+        "col": "group_id",
+        "name": "Group ID",
+        "desc": "Identifier for the assigned group or category."
+    },
+    {
+        "col": "items_in_group",
+        "name": "Items in Group",
+        "desc": "Number of items or entities within a specific group."
+    },
+    {
+        "col": "lo_value",
+        "name": "LO Value",
+        "desc": "Potential lower outlier value or a lower threshold."
+    },
+    {
+        "col": "p",
+        "name": "P-value",
+        "desc": "Probability value indicating statistical significance."
+    },
+    {
+        "col": "goodsgrna",
+        "name": "Good sgRNA",
+        "desc": "Indicator or count of single-guide RNAs deemed 'good' or effective."
+    },
+    {
+        "col": "num",
+        "name": "Number",
+        "desc": "Generic numeric value or count."
+    },
+    {
+        "col": "neg|score",
+        "name": "Negative Score",
+        "desc": "Score associated with negative selection or effect."
+    },
+    {
+        "col": "neg|p-value",
+        "name": "Negative P-value",
+        "desc": "P-value associated with negative selection or effect."
+    },
+    {
+        "col": "neg|fdr",
+        "name": "Negative FDR",
+        "desc": "False discovery rate associated with negative selection."
+    },
+    {
+        "col": "neg|rank",
+        "name": "Negative Rank",
+        "desc": "Ranking based on negative selection or effect."
+    },
+    {
+        "col": "neg|goodsgrna",
+        "name": "Negative Good sgRNA",
+        "desc": "Good or effective sgRNA count associated with negative selection."
+    },
+    {
+        "col": "neg|lfc",
+        "name": "Negative Log Fold Change",
+        "desc": "Logarithm of fold change in negative context."
+    },
+    {
+        "col": "pos|score",
+        "name": "Positive Score",
+        "desc": "Score associated with positive selection or effect."
+    },
+    {
+        "col": "pos|p-value",
+        "name": "Positive P-value",
+        "desc": "P-value associated with positive selection or effect."
+    },
+    {
+        "col": "pos|fdr",
+        "name": "Positive FDR",
+        "desc": "False discovery rate associated with positive selection."
+    },
+    {
+        "col": "pos|rank",
+        "name": "Positive Rank",
+        "desc": "Ranking based on positive selection or effect."
+    },
+    {
+        "col": "pos|goodsgrna",
+        "name": "Positive Good sgRNA",
+        "desc": "Good or effective sgRNA count associated with positive selection."
+    },
+    {
+        "col": "pos|lfc",
+        "name": "Positive Log Fold Change",
+        "desc": "Logarithm of fold change in positive context."
+    },
+    {
+        "col": "control_count",
+        "name": "Control Count",
+        "desc": "Number of items or reads in control condition."
+    },
+    {
+        "col": "treatment_count",
+        "name": "Treatment Count",
+        "desc": "Number of items or reads in treatment condition."
+    },
+    {
+        "col": "control_mean",
+        "name": "Control Mean",
+        "desc": "Average metric for control samples or condition."
+    },
+    {
+        "col": "treat_mean",
+        "name": "Treatment Mean",
+        "desc": "Average metric for treatment samples or condition."
+    },
+    {
+        "col": "lfc",
+        "name": "Log Fold Change",
+        "desc": "Logarithm of the ratio of treatment to control, indicating differential expression or effect."
+    },
+    {
+        "col": "control_var",
+        "name": "Control Variance",
+        "desc": "Measure of dispersion for the control group."
+    },
+    {
+        "col": "adj_var",
+        "name": "Adjusted Variance",
+        "desc": "Variance metric that has been adjusted for potential confounders."
+    },
+    {
+        "col": "p.twosided",
+        "name": "Two-sided P-value",
+        "desc": "P-value from a two-sided statistical test, assessing both directions of effect."
+    },
+    {
+        "col": "high_in_treatment",
+        "name": "High in Treatment",
+        "desc": "Indicator or count of items high or upregulated in treatment."
+    },
+    {
+        "col": "neg|rra",
+        "name": "Negative RRA",
+        "desc": "Robust rank aggregation in a negative context."
+    },
+    {
+        "col": "neg|goodgene",
+        "name": "Negative Good Gene",
+        "desc": "Good or effective gene count in negative context."
+    },
+    {
+        "col": "pos|rra",
+        "name": "Positive RRA",
+        "desc": "Robust rank aggregation in a positive context."
+    },
+    {
+        "col": "pos|goodgene",
+        "name": "Positive Good Gene",
+        "desc": "Good or effective gene count in positive context."
+    },
+    {
+        "col": "treatment_control|beta",
+        "name": "Beta (Treatment-Control)",
+        "desc": "Beta coefficient comparing treatment to control."
+    },
+    {
+        "col": "treatment_control|z",
+        "name": "Z-score (Treatment-Control)",
+        "desc": "Z-score comparing treatment effect size to control."
+    },
+    {
+        "col": "treatment_control|p-value",
+        "name": "P-value (Treatment-Control)",
+        "desc": "Statistical significance comparing treatment to control."
+    },
+    {
+        "col": "treatment_control|fdr",
+        "name": "FDR (Treatment-Control)",
+        "desc": "False discovery rate comparing treatment to control."
+    },
+    {
+        "col": "treatment_control|wald-p-value",
+        "name": "Wald P-value (Treatment-Control)",
+        "desc": "Wald test p-value comparing treatment to control."
+    },
+    {
+        "col": "treatment_control|wald-fdr",
+        "name": "Wald FDR (Treatment-Control)",
+        "desc": "False discovery rate from the Wald test comparing treatment to control."
+    },
+    {
+        "col": "eff",
+        "name": "Efficiency",
+        "desc": "Efficiency metric, possibly indicating the effectiveness of a process or treatment."
+    },
+    {
+        "col": "cov",
+        "name": "Coverage",
+        "desc": "Depth or amount of sequence data available for a specific location or gene."
+    },
+    {
+        "col": "cov_isg_lib",
+        "name": "Coverage in ISG Library",
+        "desc": "Depth or amount of sequence data for a specific location or gene within the ISG (Interferon-Stimulated Gene) library."
+    },
+    {
+        "col": "isg",
+        "name": "ISG Status",
+        "desc": "Indicator for whether the gene or element is an Interferon-Stimulated Gene."
+    },
+    {
+        "col": "lib",
+        "name": "Library",
+        "desc": "Reference to the library or collection of genes, elements, or sequences."
+    },
+    {
+        "col": "bgratio",
+        "name": "Background Ratio",
+        "desc": "Relative abundance of control or non-targeting single guide RNAs (sgRNAs) compared to the experimental or targeting sgRNAs"
+    }
+]
