@@ -789,7 +789,7 @@
                 "process": "Gene Set Enrichment Analysis",
                 "file": "data/gsea/gsea.csv",
                 "name": "p-value",
-                "desc": "The p-value indicating significance of gene set enrichment"
+                "desc": "The p-value indicating statistical significance of gene set enrichment"
             }
         ]
     },
