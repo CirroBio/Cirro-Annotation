@@ -76,8 +76,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "CDR1 Amino Acid",
-                "desc": "The predicted amino acid sequence for the Complemntarity-Determining Region 1 (CDR1) of the T-cell receptor (TCR) in the dataset"
+                "name": "CDR1 Amino Acid Sequence",
+                "desc": "The predicted CDR1 amino acid sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -95,8 +95,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "CDR2 Amino Acid",
-                "desc": "The predicted amino acid sequence for the Complemntarity-Determining Region 2 (CDR2) of the T-cell receptor (TCR) in the dataset"
+                "name": "CDR2 Amino Acid Sequence",
+                "desc": "The predicted CDR2 amino acid sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -114,8 +114,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "CDR3 Amino Acid",
-                "desc": "The predicted amino acid sequence for the Complemntarity-Determining Region 3 (CDR3) of the T-cell receptor (TCR) in the dataset"
+                "name": "CDR3 Amino Acid Sequence",
+                "desc": "The predicted CDR3 amino acid sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -140,7 +140,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "CDR3 Nucleotide Sequence",
-                "desc": "The predicted nucleotide sequence for the Complementarity-Determining Region 3 (CDR3) of the T-cell receptor (TCR) in the dataset"
+                "desc": "The predicted CDR3 nucleotide sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -622,28 +622,10 @@
             }
         ]
     },
-    "log2foldchange": {
-        "column": [
-            "log2FoldChange"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "Log2 Fold Change",
-                "desc": "The log2 fold change between conditions"
-            },
-            {
-                "process": "Differential Expression",
-                "file": "data/differentiation_day.DEseq2.csv",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
     "logfc": {
         "column": [
-            "logFC"
+            "logFC",
+            "log2FoldChange"
         ],
         "metadata": [
             {
@@ -661,6 +643,12 @@
             {
                 "process": "Differential Expression",
                 "file": "data/DE_results.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Differential Expression",
+                "file": "data/differentiation_day.DEseq2.csv",
                 "name": "",
                 "desc": ""
             }
@@ -712,7 +700,7 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "Adjusted p-Value",
+                "name": "Adjusted p-value",
                 "desc": "The p-value adjusted for multiple hypothesis testing"
             },
             {
@@ -773,47 +761,35 @@
             }
         ]
     },
-    "pval": {
+    "pvalue": {
         "column": [
+            "pvalue",
             "pval"
         ],
         "metadata": [
             {
                 "process": "*",
                 "file": "*",
-                "name": "p-Value",
-                "desc": "The p-value indicating significance of gene set enrichment"
-            },
-            {
-                "process": "Gene Set Enrichment Analysis",
-                "file": "data/gsea/gsea.csv",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
-    "pvalue": {
-        "column": [
-            "pvalue"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "p-Value",
-                "desc": "The p-value indicating statistical significance of differential expression"
+                "name": "p-value",
+                "desc": "The p-value indicating statistical significance of comparison"
             },
             {
                 "process": "Differential Expression",
                 "file": "data/DE_results.csv",
-                "name": "",
-                "desc": ""
+                "name": "p-value",
+                "desc": "The p-value indicating statistical significance of differential expression"
             },
             {
                 "process": "Differential Expression",
                 "file": "data/differentiation_day.DEseq2.csv",
-                "name": "",
-                "desc": ""
+                "name": "p-value",
+                "desc": "The p-value indicating statistical significance of differential expression"
+            },
+            {
+                "process": "Gene Set Enrichment Analysis",
+                "file": "data/gsea/gsea.csv",
+                "name": "p-value",
+                "desc": "The p-value indicating significance of gene set enrichment"
             }
         ]
     },
@@ -825,7 +801,7 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "q-Value",
+                "name": "q-value",
                 "desc": "The adjusted p-value controlling false discovery rate (FDR)"
             },
             {
