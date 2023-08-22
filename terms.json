@@ -473,7 +473,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "J Gene Segment Clonotype Call",
-                "desc": "The clonotype call associated with the identified joining (J) gene segment."
+                "desc": "The clonotype call associated with the identified joining (J) gene segment"
             },
             {
                 "process": "Immune Clonotypes",
@@ -491,8 +491,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "j_cigar",
-                "desc": ""
+                "name": "J Gene CIGAR String",
+                "desc": "The CIGAR string of the J gene alignment"
             },
             {
                 "process": "Immune Clonotypes",
@@ -510,8 +510,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "j_identity",
-                "desc": ""
+                "name": "J Gene Identity",
+                "desc": "The identity percentage of the alignment with the joining (J) gene segment"
             },
             {
                 "process": "Immune Clonotypes",
@@ -529,8 +529,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "junction",
-                "desc": ""
+                "name": "Junction",
+                "desc": "The nucleotide sequence of the rearrangement's junction (CDR3)"
             },
             {
                 "process": "Immune Clonotypes",
@@ -548,8 +548,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "junction_aa",
-                "desc": ""
+                "name": "Junction Amino Acid Sequence",
+                "desc": "The amino acid sequence of the rearrangement's junction (CDR3)"
             },
             {
                 "process": "Immune Clonotypes",
@@ -567,8 +567,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "leadingedge",
-                "desc": ""
+                "name": "Leading Edge Genes",
+                "desc": "The subset of genes contributing most to the enrichment signal"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -586,8 +586,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "lfcse",
-                "desc": ""
+                "name": "Log Fold Change Standard Error",
+                "desc": "The standard error of the log fold change between conditions"
             },
             {
                 "process": "Differential Expression",
@@ -611,8 +611,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "log2err",
-                "desc": ""
+                "name": "Log2 Fold Change Error",
+                "desc": "The error associated with the log2 fold change estimation"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -630,8 +630,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "log2foldchange",
-                "desc": ""
+                "name": "Log2 Fold Change",
+                "desc": "The log2 fold change between conditions"
             },
             {
                 "process": "Differential Expression",
@@ -649,8 +649,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "logfc",
-                "desc": ""
+                "name": "Log2 Fold Change",
+                "desc": "The log2 fold change between conditions"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -674,8 +674,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "method",
-                "desc": ""
+                "name": "Analysis Method",
+                "desc": "The algorithm or software used for differential expression analysis"
             },
             {
                 "process": "Differential Expression",
@@ -693,8 +693,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "nes",
-                "desc": ""
+                "name": "Normalized Enrichment Score",
+                "desc": "The enrichment score normalized for gene set size and distribution"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -712,8 +712,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "padj",
-                "desc": ""
+                "name": "Adjusted p-Value",
+                "desc": "The p-value adjusted for multiple hypothesis testing"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -743,8 +743,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pathway",
-                "desc": ""
+                "name": "Enriched Pathway",
+                "desc": "Name or identifier of the enriched biological pathway or gene set"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -762,8 +762,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "productive",
-                "desc": ""
+                "name": "Productivity Status",
+                "desc": "True or False value indicating if the contig was delcard as productive"
             },
             {
                 "process": "Immune Clonotypes",
@@ -781,8 +781,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pval",
-                "desc": ""
+                "name": "p-Value",
+                "desc": "The p-value indicating significance of gene set enrichment"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -800,8 +800,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pvalue",
-                "desc": ""
+                "name": "p-Value",
+                "desc": "The p-value indicating statistical significance of differential expression"
             },
             {
                 "process": "Differential Expression",
@@ -825,8 +825,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "qvalue",
-                "desc": ""
+                "name": "q-Value",
+                "desc": "The adjusted p-value controlling false discovery rate (FDR)"
             },
             {
                 "process": "Differential Expression",
@@ -850,8 +850,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "rev_comp",
-                "desc": ""
+                "name": "Reverse Complement Status",
+                "desc": "True or False value indicating whether the reverse complement was used during alignment or analysis"
             },
             {
                 "process": "Immune Clonotypes",
@@ -869,8 +869,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "sample",
-                "desc": ""
+                "name": "Sample",
+                "desc": "Unique identifier or label for analyzed biological sample"
             },
             {
                 "process": "Immune Clonotypes",
@@ -888,8 +888,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "sequence",
-                "desc": ""
+                "name": "Sequence",
+                "desc": "Immune receptor nucleotide or amino acid sequence for characterization"
             },
             {
                 "process": "Immune Clonotypes",
@@ -907,8 +907,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "sequence_alignment",
-                "desc": ""
+                "name": "Sequence Alignment",
+                "desc": "The aligned sequence of the VDJ rearrangement"
             },
             {
                 "process": "Immune Clonotypes",
@@ -926,8 +926,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "sequence_id",
-                "desc": ""
+                "name": "Sequence ID",
+                "desc": "The name of the contig associated with the rearrangement"
             },
             {
                 "process": "Immune Clonotypes",
@@ -945,8 +945,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "size",
-                "desc": ""
+                "name": "Gene Set Size",
+                "desc": "Number of genes in the analyzed gene set"
             },
             {
                 "process": "Gene Set Enrichment Analysis",
@@ -964,8 +964,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "stat",
-                "desc": ""
+                "name": "Statistical Metric",
+                "desc": "Quantitative measure of gene expression differences"
             },
             {
                 "process": "Differential Expression",
@@ -989,8 +989,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "unnamed_0",
-                "desc": ""
+                "name": "Unnamed Placeholder",
+                "desc": "Variable placeholder"
             },
             {
                 "process": "Differential Expression",
@@ -1008,8 +1008,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "v",
-                "desc": ""
+                "name": "V Gene Segment",
+                "desc": "The variable (V) gene segment identified within the analyzed TCR sequence"
             },
             {
                 "process": "Immune Clonotypes",
@@ -1033,8 +1033,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "v_call",
-                "desc": ""
+                "name": "V Gene Segment Clonotype Call",
+                "desc": "The clonotype call associated with the identified variable (V) gene segment"
             },
             {
                 "process": "Immune Clonotypes",
@@ -1052,8 +1052,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "v_cigar",
-                "desc": ""
+                "name": "V Gene CIGAR String",
+                "desc": "The CIGAR string of the V gene alignment"
             },
             {
                 "process": "Immune Clonotypes",
@@ -1071,8 +1071,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "v_identity",
-                "desc": ""
+                "name": "V Gene Identity",
+                "desc": "The identity percentage of the alignment with the variable (V) gene segment"
             },
             {
                 "process": "Immune Clonotypes",
@@ -1090,8 +1090,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "variable",
-                "desc": ""
+                "name": "Predictor Variable",
+                "desc": "Factor determining experimental conditions for identifying differentially expressed genes"
             },
             {
                 "process": "Differential Expression",
