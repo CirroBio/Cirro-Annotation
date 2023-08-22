@@ -208,7 +208,7 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "Contig Length Status",
+                "name": "Contig Full Length",
                 "desc": "True or False value indicating if the contig was declared as full-length"
             },
             {
@@ -233,7 +233,7 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "V(D)J Recombination Status",
+                "name": "V(D)J Recombination Combination",
                 "desc": "True or False value indicating if the V(D)J recombination process is considered complete or not"
             },
             {
@@ -762,8 +762,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "Productivity Status",
-                "desc": "True or False value indicating if the contig was delcard as productive"
+                "name": "Productive",
+                "desc": "True or False value indicating if the contig was declared as productive"
             },
             {
                 "process": "Immune Clonotypes",
@@ -850,7 +850,7 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "Reverse Complement Status",
+                "name": "Reverse Complement",
                 "desc": "True or False value indicating whether the reverse complement was used during alignment or analysis"
             },
             {
