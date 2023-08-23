@@ -1076,5 +1076,238 @@
                 "desc": ""
             }
         ]
+    },
+    "ambigcount": {
+        "column": [
+            "AmbigCount"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "ambigcount",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/SRX12485758/aux_info/ambig_info.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "ddx11l1": {
+        "column": [
+            "DDX11L1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "ddx11l1",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon_tx2gene.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "ddx11l1_1": {
+        "column": [
+            "DDX11L1.1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "ddx11l1_1",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon_tx2gene.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "fastq_1": {
+        "column": [
+            "fastq_1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "fastq_1",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/pipeline_info/samplesheet.valid.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "fastq_2": {
+        "column": [
+            "fastq_2"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "fastq_2",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/pipeline_info/samplesheet.valid.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "gene_name": {
+        "column": [
+            "gene_name"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "gene_name",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon.merged.gene_counts.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon.merged.gene_counts_length_scaled.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon.merged.gene_counts_scaled.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon.merged.gene_tpm.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "rna0": {
+        "column": [
+            "rna0"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "rna0",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon_tx2gene.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "single_end": {
+        "column": [
+            "single_end"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "single_end",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/pipeline_info/samplesheet.valid.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "strandedness": {
+        "column": [
+            "strandedness"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "strandedness",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/pipeline_info/samplesheet.valid.csv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "tx": {
+        "column": [
+            "tx"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "tx",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon.merged.transcript_counts.tsv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/salmon.merged.transcript_tpm.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "uniquecount": {
+        "column": [
+            "UniqueCount"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "uniquecount",
+                "desc": ""
+            },
+            {
+                "process": "Gene Expression (nf-core/rnaseq)",
+                "file": "data/salmon/SRX12485758/aux_info/ambig_info.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
     }
 }
