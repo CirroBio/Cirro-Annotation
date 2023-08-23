@@ -1085,8 +1085,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "ambigcount",
-                "desc": ""
+                "name": "Ambiguous Read Count",
+                "desc": "Count of ambiguously-mapping reads for the transcript"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1104,8 +1104,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "ddx11l1",
-                "desc": ""
+                "name": "DDX11L1",
+                "desc": "Gene IDs associated with the gene DDX11L1"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1123,8 +1123,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "ddx11l1_1",
-                "desc": ""
+                "name": "DDX11L1.1",
+                "desc": "Gene IDs associated with the gene DDX11L1.1"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1142,8 +1142,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "fastq_1",
-                "desc": ""
+                "name": "FASTQ File (Read 1)",
+                "desc": "Path to first paired-end FASTQ file"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1161,8 +1161,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "fastq_2",
-                "desc": ""
+                "name": "FASTQ File (Read 2)",
+                "desc": "Path to second paired-end FASTQ file"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1180,8 +1180,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "gene_name",
-                "desc": ""
+                "name": "Gene Name",
+                "desc": "Gene name"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1217,8 +1217,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "rna0",
-                "desc": ""
+                "name": "Transcript ID",
+                "desc": "Unique transcript identifier"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1236,8 +1236,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "single_end",
-                "desc": ""
+                "name": "Single-End Sequencing",
+                "desc": "True or False value indicating whether the sequencing data originates from a single end of DNA fragments"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1255,8 +1255,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "strandedness",
-                "desc": ""
+                "name": "Strandedness",
+                "desc": "Orientation of RNA strands in sequencing library"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1274,8 +1274,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "tx",
-                "desc": ""
+                "name": "Transcript ID",
+                "desc": "Unique transcript identifier"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1299,8 +1299,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "uniquecount",
-                "desc": ""
+                "name": "Unique Read Count",
+                "desc": "Count of uniquely-mapping reads for the transcript"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
