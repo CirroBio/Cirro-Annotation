@@ -265,7 +265,8 @@
     },
     "count": {
         "column": [
-            "#count"
+            "#count",
+            "Count"
         ],
         "metadata": [
             {
@@ -283,6 +284,54 @@
             {
                 "process": "Immune Clonotypes",
                 "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
                 "name": "",
                 "desc": ""
             }
@@ -839,7 +888,8 @@
     },
     "sample": {
         "column": [
-            "sample"
+            "sample",
+            "Sample"
         ],
         "metadata": [
             {
@@ -851,6 +901,12 @@
             {
                 "process": "Immune Clonotypes",
                 "file": "data/TRUST4_report.csv",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
                 "name": "",
                 "desc": ""
             }
@@ -1305,6 +1361,3410 @@
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
                 "file": "data/salmon/SRX12485758/aux_info/ambig_info.tsv",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "adj_var": {
+        "column": [
+            "adj_var"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "adj_var",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "b_cells": {
+        "column": [
+            "B.cells"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "b_cells",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "bgratio": {
+        "column": [
+            "BgRatio"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "bgratio",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "chosen": {
+        "column": [
+            "chosen"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "chosen",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.phigh.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.plow.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "control_1": {
+        "column": [
+            "control_1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "control_1",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "control_2": {
+        "column": [
+            "control_2"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "control_2",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "control_2_control_1": {
+        "column": [
+            "control_2,control_1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "control_2_control_1",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/control_sample_names.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "control_count": {
+        "column": [
+            "control_count"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "control_count",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "control_mean": {
+        "column": [
+            "control_mean"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "control_mean",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "control_var": {
+        "column": [
+            "control_var"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "control_var",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "dendritic_cells": {
+        "column": [
+            "Dendritic.cells"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "dendritic_cells",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "depmap": {
+        "column": [
+            "Depmap"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "depmap",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/mle/QC/beta.all.genes.dist.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "description": {
+        "column": [
+            "Description"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "description",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "eff": {
+        "column": [
+            "eff"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "eff",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "entrezid": {
+        "column": [
+            "EntrezID"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "entrezid",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/mle/QC/beta.all.genes.dist.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/rra_processed_data.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "fdr": {
+        "column": [
+            "FDR"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "fdr",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.high.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.low.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/rra_processed_data.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "file": {
+        "column": [
+            "File"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "file",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "gene": {
+        "column": [
+            "Gene"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "gene",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/mle/QC/beta.all.genes.dist.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "geneid": {
+        "column": [
+            "geneID"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "geneid",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "genename": {
+        "column": [
+            "geneName"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "genename",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "generatio": {
+        "column": [
+            "GeneRatio"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "generatio",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "giniindex": {
+        "column": [
+            "GiniIndex"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "giniindex",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "goodsgrna": {
+        "column": [
+            "goodsgrna"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "goodsgrna",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.high.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.low.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "group": {
+        "column": [
+            "group"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "group",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "group_id": {
+        "column": [
+            "group_id"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "group_id",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.high.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.low.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "high_in_treatment": {
+        "column": [
+            "high_in_treatment"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "high_in_treatment",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "humangene": {
+        "column": [
+            "HumanGene"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "humangene",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/mle/QC/beta.all.genes.dist.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/rra_processed_data.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "id": {
+        "column": [
+            "ID",
+            "id"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "id",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/rra_processed_data.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "items_in_group": {
+        "column": [
+            "items_in_group"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "items_in_group",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.high.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.low.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "label": {
+        "column": [
+            "Label"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "label",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "lfc": {
+        "column": [
+            "LFC"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "lfc",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "lo_value": {
+        "column": [
+            "lo_value"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "lo_value",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.high.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.low.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "logfdr": {
+        "column": [
+            "LogFDR"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "logfdr",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/rra_processed_data.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "macrophages_m1": {
+        "column": [
+            "Macrophages.M1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "macrophages_m1",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "macrophages_m2": {
+        "column": [
+            "Macrophages.M2"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "macrophages_m2",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "mapped": {
+        "column": [
+            "Mapped"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "mapped",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "mean_depth": {
+        "column": [
+            "mean_depth"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "mean_depth",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "median_depth": {
+        "column": [
+            "median_depth"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "median_depth",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "monocytes": {
+        "column": [
+            "Monocytes"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "monocytes",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "n_detected": {
+        "column": [
+            "n_detected"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "n_detected",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "n_guides": {
+        "column": [
+            "n_guides"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "n_guides",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "n_hundred_reads": {
+        "column": [
+            "n_hundred_reads"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "n_hundred_reads",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "n_reads": {
+        "column": [
+            "n_reads"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "n_reads",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "n_ten_reads": {
+        "column": [
+            "n_ten_reads"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "n_ten_reads",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "n_undetected": {
+        "column": [
+            "n_undetected"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "n_undetected",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neg_fdr": {
+        "column": [
+            "neg|fdr"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neg_fdr",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neg_goodgene": {
+        "column": [
+            "neg|goodgene"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neg_goodgene",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neg_goodsgrna": {
+        "column": [
+            "neg|goodsgrna"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neg_goodsgrna",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neg_lfc": {
+        "column": [
+            "neg|lfc"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neg_lfc",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neg_p_value": {
+        "column": [
+            "neg|p-value"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neg_p_value",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neg_rank": {
+        "column": [
+            "neg|rank"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neg_rank",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neg_rra": {
+        "column": [
+            "neg|rra"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neg_rra",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neg_score": {
+        "column": [
+            "neg|score"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neg_score",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "negselqc": {
+        "column": [
+            "NegSelQC"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "negselqc",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "negselqcgene": {
+        "column": [
+            "NegSelQCGene"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "negselqcgene",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "negselqcpval": {
+        "column": [
+            "NegSelQCPval"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "negselqcpval",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "negselqcpvalpermutation": {
+        "column": [
+            "NegSelQCPvalPermutation"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "negselqcpvalpermutation",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "negselqcpvalpermutationfdr": {
+        "column": [
+            "NegSelQCPvalPermutationFDR"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "negselqcpvalpermutationfdr",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "neutrophils": {
+        "column": [
+            "Neutrophils"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "neutrophils",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "nk_cells": {
+        "column": [
+            "NK.cells"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "nk_cells",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "num": {
+        "column": [
+            "num"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "num",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "other": {
+        "column": [
+            "Other"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "other",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "p": {
+        "column": [
+            "p"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "p",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.high.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene.low.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "p_adjust": {
+        "column": [
+            "p.adjust"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "p_adjust",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "p_high": {
+        "column": [
+            "p.high"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "p_high",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.phigh.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "p_low": {
+        "column": [
+            "p.low"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "p_low",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.plow.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "p_twosided": {
+        "column": [
+            "p.twosided"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "p_twosided",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "percentage": {
+        "column": [
+            "Percentage"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "percentage",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pool": {
+        "column": [
+            "pool"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pool",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.phigh.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.plow.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pos_fdr": {
+        "column": [
+            "pos|fdr"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pos_fdr",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pos_goodgene": {
+        "column": [
+            "pos|goodgene"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pos_goodgene",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pos_goodsgrna": {
+        "column": [
+            "pos|goodsgrna"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pos_goodsgrna",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pos_lfc": {
+        "column": [
+            "pos|lfc"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pos_lfc",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pos_p_value": {
+        "column": [
+            "pos|p-value"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pos_p_value",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pos_rank": {
+        "column": [
+            "pos|rank"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pos_rank",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pos_rra": {
+        "column": [
+            "pos|rra"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pos_rra",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "pos_score": {
+        "column": [
+            "pos|score"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "pos_score",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "prob": {
+        "column": [
+            "prob"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "prob",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.phigh.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.plow.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "reads": {
+        "column": [
+            "Reads"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "reads",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "score": {
+        "column": [
+            "Score",
+            "score"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "score",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/rra_processed_data.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "sgrna": {
+        "column": [
+            "sgRNA",
+            "sgrna"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "sgrna",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.phigh.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.plow.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "symbol": {
+        "column": [
+            "Symbol",
+            "symbol"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "symbol",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/mle/QC/beta.all.genes.dist.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/rra_processed_data.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.phigh.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.plow.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "t_cells_cd4": {
+        "column": [
+            "T.cells.CD4"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "t_cells_cd4",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "t_cells_cd8": {
+        "column": [
+            "T.cells.CD8"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "t_cells_cd8",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "totalsgrnas": {
+        "column": [
+            "TotalsgRNAs"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "totalsgrnas",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treat_mean": {
+        "column": [
+            "treat_mean"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treat_mean",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_1": {
+        "column": [
+            "treatment_1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_1",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_1_treatment_2": {
+        "column": [
+            "treatment_1,treatment_2"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_1_treatment_2",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/treatment_sample_names.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_2": {
+        "column": [
+            "treatment_2"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_2",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.normalized.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/counts.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.count.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.count_normalized.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_2_control_2_treatment_1_control_1": {
+        "column": [
+            "treatment_2,control_2,treatment_1,control_1"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_2_control_2_treatment_1_control_1",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/combined/sample_names.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_control": {
+        "column": [
+            "treatment_control"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_control",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageckflute/mle/QC/beta.all.genes.dist.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_control_beta": {
+        "column": [
+            "treatment_control|beta"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_control_beta",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_control_fdr": {
+        "column": [
+            "treatment_control|fdr"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_control_fdr",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_control_p_value": {
+        "column": [
+            "treatment_control|p-value"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_control_p_value",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_control_wald_fdr": {
+        "column": [
+            "treatment_control|wald-fdr"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_control_wald_fdr",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_control_wald_p_value": {
+        "column": [
+            "treatment_control|wald-p-value"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_control_wald_p_value",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_control_z": {
+        "column": [
+            "treatment_control|z"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_control_z",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/mle/mle.gene_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "treatment_count": {
+        "column": [
+            "treatment_count"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "treatment_count",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/rra/rra.sgrna_summary.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "tregs": {
+        "column": [
+            "Tregs"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "tregs",
+                "desc": ""
+            },
+            {
+                "process": "Lymphocyte Quantification",
+                "file": "data/quanTIseq_cell_fractions.txt",
+                "name": "",
+                "desc": ""
+            }
+        ]
+    },
+    "zerocounts": {
+        "column": [
+            "Zerocounts"
+        ],
+        "metadata": [
+            {
+                "process": "*",
+                "file": "*",
+                "name": "zerocounts",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/control/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Flute",
+                "file": "data/mageck/count/treatment/treatment_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/control_2.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_1.countsummary.txt",
+                "name": "",
+                "desc": ""
+            },
+            {
+                "process": "MAGeCK Count",
+                "file": "data/mageck/count/treatment_2.countsummary.txt",
                 "name": "",
                 "desc": ""
             }

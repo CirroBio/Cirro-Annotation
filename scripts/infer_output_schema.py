@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from functools import lru_cache
 import json
 import re
 from typing import List, Optional
@@ -10,39 +11,41 @@ from cirro.sdk.project import DataPortalProject
 import pandas as pd
 from pandas.errors import ParserError
 from pathlib import Path
-import streamlit as st
 
 
 class InferOutputs:
 
     def __init__(self) -> None:
-        if not st.session_state.__contains__("DataPortal"):
-            st.session_state["DataPortal"] = DataPortal()
+        self.portal = DataPortal()
 
-    @property
-    def portal(self) -> DataPortal:
-        return st.session_state["DataPortal"]
+        # Load any terms which already exist
+        if Path("terms.json").exists():
+            self.terms = json.load(open("terms.json"))
+        else:
+            self.terms = {}
 
-    @st.cache_resource
+    @lru_cache
     def list_processes(_self) -> List[DataPortalProcess]:
         return _self.portal.list_processes()
 
-    @st.cache_resource
+    @lru_cache
     def list_projects(_self) -> List[DataPortalProject]:
         return _self.portal.list_projects()
 
-    @st.cache_resource
+    @lru_cache
     def list_datasets(_self, project_id) -> List[DataPortalDataset]:
         project = _self.portal.get_project_by_id(project_id)
         return project.list_datasets()
 
     def run(self) -> None:
-        self.status = st.empty()
+
         # Set up an empty table of column names
         self.column_data = []
         for process in self.list_processes():
             if process.name not in [
-                # "Gene Expression (nf-core/rnaseq)",
+                "Somatic Variant Calling (DRAGEN)",
+                "Variant Calling (nf-core/sarek)",
+                "Gene Expression (nf-core/rnaseq)",
                 "MAGeCK Count",
                 "MAGeCK Flute",
                 "Immune Clonotypes",
@@ -50,24 +53,32 @@ class InferOutputs:
                 "Gene Set Enrichment Analysis",
                 "Lymphocyte Quantification"
             ]:  # FIXME
+                print(process.name)
                 continue
             # Add to the column_data list
-            self.infer_process(process)
+            if not self.already_parsed_process(process.name):
+                try:
+                    self.infer_process(process)
+                except Exception as e:
+                    print(f"Could not parse examples from {process}")
+                    print(str(e))
 
         # Analyze the aggregated column_data
         self.parse_terms()
+
+    def already_parsed_process(self, process) -> bool:
+        """Return a bool indicating whether the process has been parsed."""
+        return any([
+            i["process"] == process
+            for v in self.terms.values()
+            for i in v["metadata"]
+        ])
 
     def parse_terms(self) -> None:
         """
         Based on the collection of column names identified so far,
         make/update a dictionary of terms.
         """
-
-        # Load any terms which already exist
-        if Path("terms.json").exists():
-            self.terms = json.load(open("terms.json"))
-        else:
-            self.terms = {}
 
         # Concatenate the list of terms
         if isinstance(self.column_data, list):
@@ -85,13 +96,19 @@ class InferOutputs:
 
         # Get the terminal file name
         self.column_data = self.column_data.assign(
-            filename = self.column_data["file"].apply(
+            filename=self.column_data["file"].apply(
                 lambda s: s.split("/")[-1]
             )
         )
 
         # For each of the sanitized names
-        for sani, df in self.column_data.groupby("sanitized_cname"):
+        for (sani, cname), df in self.column_data.groupby(
+            ["sanitized_cname", "cname"]
+        ):
+
+            # If the column is already in the list of terms, skip it
+            if any([cname in term["column"] for term in self.terms.values()]):
+                continue
 
             # If the entry doesn't already exist, add it
             if sani not in self.terms:
@@ -136,9 +153,9 @@ class InferOutputs:
         # Write out the terms JSON
         with open("terms.json", "wt") as handle:
             json.dump(self.terms, handle, indent=4)
-        st.write("Wrote out updated terms JSON")
+        print("Wrote out updated terms JSON")
 
-    @st.cache_data
+    @lru_cache
     def sanitize_cname(_self, cname: str):
         cname = re.sub('[^0-9a-zA-Z]+', '_', cname.lower().strip()).strip("_")
         while "__" in cname:
@@ -173,6 +190,7 @@ class InferOutputs:
         **kwargs
     ):
 
+        print(f"Reading {project_id} / {dataset_id} / {file}")
         # Read the first few lines of the file
         sep = "," if "csv" in file else "\t"
         head = self.read_csv(
@@ -196,7 +214,7 @@ class InferOutputs:
     def write_status(self, msg):
         self.status.write(msg)
 
-    @st.cache_resource
+    @lru_cache
     def read_csv(
         _self,
         project_id,
@@ -204,7 +222,7 @@ class InferOutputs:
         file,
         **kwargs
     ) -> Optional[pd.DataFrame]:
-        # _self.write_status(f"Reading {file} from {project_id} - {dataset_id}")
+
         try:
             return (
                 _self
@@ -218,10 +236,10 @@ class InferOutputs:
         except ParserError:
             return pd.DataFrame()
 
-    @st.cache_resource
+    @lru_cache
     def list_files_from_process(_self, process_id):
         """Return a list of all of the files from all datasets of this type."""
-        # _self.write_status(f"Finding files from {process_id} datasets")
+        print(f"Finding files from {process_id} datasets")
         return pd.DataFrame([
             dict(
                 file=file.name,
@@ -232,22 +250,25 @@ class InferOutputs:
                 process_id=process_id,
                 process_name=_self.get_process_name(process_id)
             )
-            for project in [_self.portal.get_project_by_name("Data Core Development")]
+            for project in [
+                _self.portal.get_project_by_name("Data Core Development"),
+                _self.portal.get_project_by_name("BTC-Pilot-POC"),
+            ]
             for dataset in _self.list_datasets(project.id)
             if dataset.process_id == process_id
             for file in dataset.list_files()
             if _self.valid_dsv_extension(file.name)
         ])
 
-    @st.cache_data
+    @lru_cache
     def get_process_name(_self, process_id):
         return _self.portal.get_process_by_id(process_id).name
 
     def valid_dsv_extension(self, fn):
         if fn.endswith(".gz"):
             fn = fn[:-len(".gz")]
-        return fn.endswith((".csv", ".tsv"))
-        # return fn.endswith((".csv", ".tsv", ".txt"))
+        # return fn.endswith((".csv", ".tsv"))
+        return fn.endswith((".csv", ".tsv", ".txt"))
 
 
 if __name__ == "__main__":
