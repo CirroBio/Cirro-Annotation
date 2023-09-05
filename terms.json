@@ -209,7 +209,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "Contig Full Length",
-                "desc": "True or False value indicating if the contig was declared as full-length"
+                "desc": "True or false value indicating if the contig was declared as full-length"
             },
             {
                 "process": "Immune Clonotypes",
@@ -234,7 +234,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "V(D)J Recombination Combination",
-                "desc": "True or False value indicating if the V(D)J recombination process is considered complete or not"
+                "desc": "True or false value indicating if the V(D)J recombination process is considered complete or not"
             },
             {
                 "process": "Immune Clonotypes",
@@ -273,67 +273,67 @@
                 "process": "*",
                 "file": "*",
                 "name": "Count",
-                "desc": "Raw count of occurrence of the clonotype within the analyzed sample"
+                "desc": "Raw count"
             },
             {
                 "process": "Immune Clonotypes",
                 "file": "data/SRX11996006/TRUST4_report.tsv",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "Raw count of occurrence of the clonotype within the analyzed sample"
             },
             {
                 "process": "Immune Clonotypes",
                 "file": "data/TRUST4_report.csv",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "Raw count of occurrence of the clonotype within the analyzed sample"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "The raw count of genetic elements associated with negative complex perturbations"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "TThe raw count of genetic elements related to negative GOBP terms"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "The raw count of genetic elements corresponding to negative KEGG pathways"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "The raw count of genetic elements linked to negative Reactome pathways"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "The raw count of genetic elements associated with positive complex perturbations"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "The raw count of genetic elements related to positive GOBP terms"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "The raw count of genetic elements corresponding to positive KEGG pathways"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
-                "name": "",
-                "desc": ""
+                "name": "Count",
+                "desc": "The raw count of genetic elements linked to positive Reactome pathways"
             }
         ]
     },
@@ -800,7 +800,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "Productive",
-                "desc": "True or False value indicating if the contig was declared as productive"
+                "desc": "True or false value indicating if the contig was declared as productive"
             },
             {
                 "process": "Immune Clonotypes",
@@ -876,7 +876,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "Reverse Complement",
-                "desc": "True or False value indicating whether the reverse complement was used during alignment or analysis"
+                "desc": "True or false value indicating whether the reverse complement was used during alignment or analysis"
             },
             {
                 "process": "Immune Clonotypes",
@@ -896,7 +896,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "Sample",
-                "desc": "Unique identifier or label for analyzed biological sample"
+                "desc": "Unique identifier or label for analyzed sample"
             },
             {
                 "process": "Immune Clonotypes",
@@ -1004,25 +1004,6 @@
                 "file": "data/DE_results.csv",
                 "name": "",
                 "desc": ""
-            },
-            {
-                "process": "Differential Expression",
-                "file": "data/differentiation_day.DEseq2.csv",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
-    "unnamed_0": {
-        "column": [
-            "Unnamed: 0"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "Unnamed Placeholder",
-                "desc": "Variable placeholder"
             },
             {
                 "process": "Differential Expression",
@@ -1152,44 +1133,6 @@
             }
         ]
     },
-    "ddx11l1": {
-        "column": [
-            "DDX11L1"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "DDX11L1",
-                "desc": "Gene IDs associated with the gene DDX11L1"
-            },
-            {
-                "process": "Gene Expression (nf-core/rnaseq)",
-                "file": "data/salmon/salmon_tx2gene.tsv",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
-    "ddx11l1_1": {
-        "column": [
-            "DDX11L1.1"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "DDX11L1.1",
-                "desc": "Gene IDs associated with the gene DDX11L1.1"
-            },
-            {
-                "process": "Gene Expression (nf-core/rnaseq)",
-                "file": "data/salmon/salmon_tx2gene.tsv",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
     "fastq_1": {
         "column": [
             "fastq_1"
@@ -1265,25 +1208,6 @@
             }
         ]
     },
-    "rna0": {
-        "column": [
-            "rna0"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "Transcript ID",
-                "desc": "Unique transcript identifier"
-            },
-            {
-                "process": "Gene Expression (nf-core/rnaseq)",
-                "file": "data/salmon/salmon_tx2gene.tsv",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
     "single_end": {
         "column": [
             "single_end"
@@ -1293,7 +1217,7 @@
                 "process": "*",
                 "file": "*",
                 "name": "Single-End Sequencing",
-                "desc": "True or False value indicating whether the sequencing data originates from a single end of DNA fragments"
+                "desc": "True or false value indicating whether the sequencing data originates from a single end of DNA fragments"
             },
             {
                 "process": "Gene Expression (nf-core/rnaseq)",
@@ -1374,8 +1298,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "adj_var",
-                "desc": ""
+                "name": "Adjusted Variance",
+                "desc": "The adjusted variance in control samples"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1393,8 +1317,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "b_cells",
-                "desc": ""
+                "name": "B Cells",
+                "desc": "Fraction of sampled immune cells represented by B cells"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -1418,50 +1342,50 @@
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
-                "name": "",
-                "desc": ""
+                "name": "Background-to-Raw Count Ratio",
+                "desc": "The ratio of background signal to raw count for negative control genes in complex-level analysis"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
-                "name": "",
-                "desc": ""
+                "name": "Background-to-Raw Count Ratio",
+                "desc": "The ratio of background signal to raw count for negative control genes in GOBP analysis"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
-                "name": "",
-                "desc": ""
+                "name": "Background-to-Raw Count Ratio",
+                "desc": "The ratio of background signal to raw count for negative control genes in KEGG pathway analysis"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
-                "name": "",
-                "desc": ""
+                "name": "Background-to-Raw Count Ratio",
+                "desc": "The ratio of background signal to raw count for negative control genes in Reactome pathway analysis"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
-                "name": "",
-                "desc": ""
+                "name": "Background-to-Raw Count Ratio",
+                "desc": "The ratio of background signal to raw count for positive control genes in complex-level analysis"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
-                "name": "",
-                "desc": ""
+                "name": "Background-to-Raw Count Ratio",
+                "desc": "The ratio of background signal to raw count for positive control genes in GOBP analysis"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
-                "name": "",
-                "desc": ""
+                "name": "Background-to-Raw Count Ratio",
+                "desc": "The ratio of background signal to raw count for positive control genes in KEGG pathway analysis"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
-                "name": "",
-                "desc": ""
+                "name": "Background-to-Raw Count Ratio",
+                "desc": "The ratio of background signal to raw count for positive control genes in Reactome pathway analysis"
             }
         ]
     },
@@ -1473,8 +1397,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "chosen",
-                "desc": ""
+                "name": "Chosen",
+                "desc": "Internal marker for significant results (reserved column; value set to 1)"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1498,8 +1422,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "control_1",
-                "desc": ""
+                "name": "Control 1",
+                "desc": "Control level categorizing gene expression changes for condition 1"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1553,8 +1477,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "control_2",
-                "desc": ""
+                "name": "Control 2",
+                "desc": "Control level categorizing gene expression changes for condition 2"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1600,25 +1524,6 @@
             }
         ]
     },
-    "control_2_control_1": {
-        "column": [
-            "control_2,control_1"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "control_2_control_1",
-                "desc": ""
-            },
-            {
-                "process": "MAGeCK Flute",
-                "file": "data/mageck/count/combined/control_sample_names.txt",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
     "control_count": {
         "column": [
             "control_count"
@@ -1627,8 +1532,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "control_count",
-                "desc": ""
+                "name": "Normalized Control Counts",
+                "desc": "The normalized read counts associated with the control group in the analysis"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1646,8 +1551,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "control_mean",
-                "desc": ""
+                "name": "Control Mean",
+                "desc": "Average of control sgRNA counts before and after treatment"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1665,8 +1570,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "control_var",
-                "desc": ""
+                "name": "Control Variance",
+                "desc": "Variance in control sgRNA counts before treatment"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1684,8 +1589,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "dendritic_cells",
-                "desc": ""
+                "name": "Dendritic Cells",
+                "desc": "Fraction of sampled immune cells represented by dendritic cells"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -1703,8 +1608,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "depmap",
-                "desc": ""
+                "name": "DepMap Score",
+                "desc": "DepMap score representing gene dependency significance"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1722,56 +1627,56 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "description",
+                "name": "Description",
                 "desc": ""
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
-                "name": "",
-                "desc": ""
+                "name": "Description",
+                "desc": "Protein complex description"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
-                "name": "",
-                "desc": ""
+                "name": "Description",
+                "desc": "GO term description"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
-                "name": "",
-                "desc": ""
+                "name": "Description",
+                "desc": "KEGG biological pathway description"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
-                "name": "",
-                "desc": ""
+                "name": "Description",
+                "desc": "Reactome biological pathway description"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
-                "name": "",
-                "desc": ""
+                "name": "Description",
+                "desc": "Protein complex description"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
-                "name": "",
-                "desc": ""
+                "name": "Description",
+                "desc": "GO term description"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
-                "name": "",
-                "desc": ""
+                "name": "Description",
+                "desc": "KEGG biological pathway description"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
-                "name": "",
-                "desc": ""
+                "name": "Description",
+                "desc": "Reactome biological pathway description"
             }
         ]
     },
@@ -1783,8 +1688,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "eff",
-                "desc": ""
+                "name": "Efficiency Score",
+                "desc": "Effectiveness of sgRNA in guiding the CRISPR-Cas9 system for targeted genetic modifications"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1802,8 +1707,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "entrezid",
-                "desc": ""
+                "name": "Entrez Gene ID",
+                "desc": "Unique numerical identifier assigned by the Entrez gene database"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1827,8 +1732,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "fdr",
-                "desc": ""
+                "name": "False Discovery Rate",
+                "desc": "Estimated ratio of false positives in multiple hypothesis testing"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1864,8 +1769,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "file",
-                "desc": ""
+                "name": "File Name",
+                "desc": "Input file name"
             },
             {
                 "process": "MAGeCK Flute",
@@ -1925,8 +1830,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "gene",
-                "desc": ""
+                "name": "Gene ID",
+                "desc": "Unique gene identifier"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2076,8 +1981,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "geneid",
-                "desc": ""
+                "name": "Entrez Gene ID(s)",
+                "desc": "Unique numerical identifier(s) assigned by the Entrez gene database"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2137,8 +2042,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "genename",
-                "desc": ""
+                "name": "Gene Names",
+                "desc": "Names of genes associated with a pathway, complex, or functional group"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2198,8 +2103,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "generatio",
-                "desc": ""
+                "name": "Gene Ratio",
+                "desc": "Ratio of selected genes to the total number of genes considered"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2259,8 +2164,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "giniindex",
-                "desc": ""
+                "name": "Gini Index",
+                "desc": "Measure of inequality in a distribution, quantifying the dispersion of values"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2320,8 +2225,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "goodsgrna",
-                "desc": ""
+                "name": "High Ranking sgRNA Count",
+                "desc": "Number of sgRNAs within the gene with rankings above the alpha threshold"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2345,8 +2250,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "group",
-                "desc": ""
+                "name": "Group",
+                "desc": "Treatment or control group designation for the analyzed data"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2364,8 +2269,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "group_id",
-                "desc": ""
+                "name": "Gene ID",
+                "desc": "Unique gene identifier"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2389,8 +2294,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "high_in_treatment",
-                "desc": ""
+                "name": "Higher in Treatment",
+                "desc": "True or false value indicating whether the abundance is higher in treatment samples"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2408,8 +2313,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "humangene",
-                "desc": ""
+                "name": "Human Gene ID",
+                "desc": "Unique human gene identifier "
             },
             {
                 "process": "MAGeCK Flute",
@@ -2440,68 +2345,68 @@
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_complex.txt",
-                "name": "",
-                "desc": ""
+                "name": "Protein Complex ID",
+                "desc": "Unique protein complex identifier"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_gobp.txt",
-                "name": "",
-                "desc": ""
+                "name": "GO ID",
+                "desc": "Unique GO term identifer"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_kegg.txt",
-                "name": "",
-                "desc": ""
+                "name": "KEGG Pathway ID",
+                "desc": "Unique KEGG biological pathway identifier"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Negative_reactome.txt",
-                "name": "",
-                "desc": ""
+                "name": "Reactome ID",
+                "desc": "Unique Reactome biological pathway identifier"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_complex.txt",
-                "name": "",
-                "desc": ""
+                "name": "Protein Complex ID",
+                "desc": "Unique protein complex identifier"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_gobp.txt",
-                "name": "",
-                "desc": ""
+                "name": "GO ID",
+                "desc": "Unique GO term identifer"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_kegg.txt",
-                "name": "",
-                "desc": ""
+                "name": "KEGG Pathway ID",
+                "desc": "Unique KEGG biological pathway identifier"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/Positive_reactome.txt",
-                "name": "",
-                "desc": ""
+                "name": "Reactome ID",
+                "desc": "Unique Reactome biological pathway identifier"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageck/rra/pathway/gene.pathway_summary.txt",
-                "name": "",
-                "desc": ""
+                "name": "Pathway ID",
+                "desc": "Unique biological pathway identifier"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageck/rra/rra.gene_summary.txt",
-                "name": "",
-                "desc": ""
+                "name": "Gene ID",
+                "desc": "Unique gene identifier"
             },
             {
                 "process": "MAGeCK Flute",
                 "file": "data/mageckflute/rra/MAGeCKFlute_rra/RRA/rra_processed_data.txt",
-                "name": "",
-                "desc": ""
+                "name": "Gene ID",
+                "desc": "Unique gene identifier"
             }
         ]
     },
@@ -2513,8 +2418,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "items_in_group",
-                "desc": ""
+                "name": "Items in Group",
+                "desc": "The number of targeting sgRNAs for each gene"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2538,8 +2443,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "label",
-                "desc": ""
+                "name": "Sample Label",
+                "desc": "Identifier for the treatment or control condition associated with the sample"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2599,8 +2504,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "lfc",
-                "desc": ""
+                "name": "Log Fold Change (LFC)",
+                "desc": "Logarithmic ratio of sgRNA abundance between treatment and control conditions, indicating the magnitude of change in gene expression"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2618,8 +2523,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "lo_value",
-                "desc": ""
+                "name": "Low Value",
+                "desc": "The raw p-value"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2643,8 +2548,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "logfdr",
-                "desc": ""
+                "name": "Log FDR",
+                "desc": "Log (base 10) of the False Discovery Rate-adjusted p-value"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2662,8 +2567,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "macrophages_m1",
-                "desc": ""
+                "name": "M1 Macrophages",
+                "desc": "Fraction of sampled immune cells represented by M1 macrophages"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -2681,8 +2586,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "macrophages_m2",
-                "desc": ""
+                "name": "M2 Macrophages",
+                "desc": "Fraction of sampled immune cells represented by M2 macrophages"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -2700,8 +2605,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "mapped",
-                "desc": ""
+                "name": "Mapped",
+                "desc": "Total number of reads that can be mapped to library"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2761,8 +2666,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "mean_depth",
-                "desc": ""
+                "name": "Mean Sequencing Depth",
+                "desc": "Average depth of coverage across the analyzed genomic regions"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2786,8 +2691,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "median_depth",
-                "desc": ""
+                "name": "Median Sequencing Depth",
+                "desc": "Median depth of coverage across the analyzed genomic regions"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2811,8 +2716,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "monocytes",
-                "desc": ""
+                "name": "Monocytes",
+                "desc": "Fraction of sampled immune cells represented by monocytes"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -2830,8 +2735,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "n_detected",
-                "desc": ""
+                "name": "Number of Detected Features",
+                "desc": "Total count of features or genomic elements detected in the analysis, indicating the presence of specific genes or regions"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2855,8 +2760,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "n_guides",
-                "desc": ""
+                "name": "Number of sgRNAs",
+                "desc": "Count of sgRNAs used in the analysis to target specific genomic locations using the CRISPR/Cas9 system"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2880,8 +2785,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "n_hundred_reads",
-                "desc": ""
+                "name": "Number of Reads with Quality Score ≥ 100",
+                "desc": "Count of sequencing reads with a quality score of at least 100"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2905,8 +2810,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "n_reads",
-                "desc": ""
+                "name": "Total Number of Reads",
+                "desc": "Count of sequencing reads processed"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2930,8 +2835,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "n_ten_reads",
-                "desc": ""
+                "name": "Number of Reads with Quality Score ≥ 10",
+                "desc": "Count of sequencing reads with a quality score of at least 10"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2955,8 +2860,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "n_undetected",
-                "desc": ""
+                "name": "Number of Undetected Features",
+                "desc": "Total count of features or genomic elements that were not detected in the analysis, indicating the absence or low expression of specific genes or regions"
             },
             {
                 "process": "MAGeCK Flute",
@@ -2980,8 +2885,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neg_fdr",
-                "desc": ""
+                "name": "Negative Selection FDR",
+                "desc": "The false discovery rate of this gene in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3005,8 +2910,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neg_goodgene",
-                "desc": ""
+                "name": "Negative Good Genes Count",
+                "desc": "Count of genes with good performance in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3024,8 +2929,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neg_goodsgrna",
-                "desc": ""
+                "name": "Negative Selection Good sgRNAs Count",
+                "desc": "The number of sgRNAs whose ranking is below the alpha cutoff in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3043,8 +2948,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neg_lfc",
-                "desc": ""
+                "name": "Negative Selection LFC",
+                "desc": "The log fold change of this gene in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3068,8 +2973,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neg_p_value",
-                "desc": ""
+                "name": "Negative Selection p-value",
+                "desc": "The raw p-value (using permutation) of this gene in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3093,8 +2998,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neg_rank",
-                "desc": ""
+                "name": "Negative Selection Rank",
+                "desc": "The ranking of this gene in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3118,8 +3023,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neg_rra",
-                "desc": ""
+                "name": "Negative Selection RRA",
+                "desc": "Robust rank aggregation (RRA) score for the gene in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3137,8 +3042,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neg_score",
-                "desc": ""
+                "name": "Negative Selection RRA Score",
+                "desc": "The RRA score indicating the enrichment of this gene in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3162,8 +3067,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "negselqc",
-                "desc": ""
+                "name": "Negative Selection QC",
+                "desc": "Quality control metric for negative selection analysis"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3223,8 +3128,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "negselqcgene",
-                "desc": ""
+                "name": "Negative Selection QC Genes",
+                "desc": "The number of essential genes evaluated for quality control in negative selection analysis"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3284,8 +3189,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "negselqcpval",
-                "desc": ""
+                "name": "Negative Selection QC p-value",
+                "desc": "The p-value from quality control analysis in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3345,8 +3250,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "negselqcpvalpermutation",
-                "desc": ""
+                "name": "Negative Selection QC p-value (Permutation)",
+                "desc": "Permutation-based p-value from quality control analysis in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3406,8 +3311,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "negselqcpvalpermutationfdr",
-                "desc": ""
+                "name": "Negative Selection QC p-value (Permutation) FDR",
+                "desc": "False Discovery Rate (FDR)-adjusted p-value from permutation-based quality control analysis in negative selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3467,8 +3372,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "neutrophils",
-                "desc": ""
+                "name": "Neutrophils",
+                "desc": "Fraction of sampled immune cells represented by neutrophils"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -3486,8 +3391,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "nk_cells",
-                "desc": ""
+                "name": "NK Cells",
+                "desc": "Fraction of sampled immune cells represented by natural killer (NK) cells"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -3505,8 +3410,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "num",
-                "desc": ""
+                "name": "Targeting sgRNAs Count",
+                "desc": "The number of targeting sgRNAs for each gene"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3530,8 +3435,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "other",
-                "desc": ""
+                "name": "Other",
+                "desc": "Fraction of sampled immune cells represented by other cell types"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -3549,8 +3454,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "p",
-                "desc": ""
+                "name": "p-value",
+                "desc": "Statistical p-value representing the significance of a result"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3574,8 +3479,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "p_adjust",
-                "desc": ""
+                "name": "Adjusted p-value",
+                "desc": "The p-value adjusted for multiple hypothesis testing"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3635,8 +3540,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "p_high",
-                "desc": ""
+                "name": "p-value (Higher Tail)",
+                "desc": "One-tailed p-value indicating treatment vs. control group abundance difference significance in the upper tail of the distribution"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3660,8 +3565,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "p_low",
-                "desc": ""
+                "name": "p-value (Lower Tail)",
+                "desc": "One-tailed p-value indicating treatment vs. control group abundance difference significance in the lower tail of the distribution"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3685,8 +3590,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "p_twosided",
-                "desc": ""
+                "name": "p-value (Two-Sided)",
+                "desc": "Two-tailed p-value indicating treatment vs. control group abundance difference significance"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3704,8 +3609,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "percentage",
-                "desc": ""
+                "name": "Percentage",
+                "desc": "Mapped percentage, calculated as Mapped/Reads"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3765,8 +3670,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pool",
-                "desc": ""
+                "name": "Pool",
+                "desc": "Deprecated column (all values set to single value)"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3790,8 +3695,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pos_fdr",
-                "desc": ""
+                "name": "Positive Selection FDR",
+                "desc": "The false discovery rate (FDR) of this gene in positive selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3815,8 +3720,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pos_goodgene",
-                "desc": ""
+                "name": "Positive Selection Good Genes Count",
+                "desc": "Count of genes with good performance in positive selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3834,8 +3739,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pos_goodsgrna",
-                "desc": ""
+                "name": "Positive Selection Good sgRNAs Count",
+                "desc": "The number of sgRNAs whose ranking is below the alpha cutoff in positive selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3853,8 +3758,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pos_lfc",
-                "desc": ""
+                "name": "Positive Selection LFC",
+                "desc": "The log fold change of this gene in positive selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3878,8 +3783,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pos_p_value",
-                "desc": ""
+                "name": "Positive Selection p-value",
+                "desc": "The p-value representing the significance of the gene in positive selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3903,8 +3808,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pos_rank",
-                "desc": ""
+                "name": "Positive Selection Rank",
+                "desc": "The ranking of this gene in positive selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3928,8 +3833,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pos_rra",
-                "desc": ""
+                "name": "Positive Selection RRA Score",
+                "desc": "The robust rank aggregation (RRA) score of the gene in positive selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3947,8 +3852,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "pos_score",
-                "desc": ""
+                "name": "Positive Selection Score",
+                "desc": "A score indicating the gene's significance in positive selection"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3972,8 +3877,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "prob",
-                "desc": ""
+                "name": "Prob",
+                "desc": "Reserved column (set to 1)"
             },
             {
                 "process": "MAGeCK Flute",
@@ -3997,8 +3902,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "reads",
-                "desc": ""
+                "name": "Reads",
+                "desc": "Total number of reads in the FASTQ file"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4059,8 +3964,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "score",
-                "desc": ""
+                "name": "Score",
+                "desc": "The score of this sgRNA"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4085,8 +3990,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "sgrna",
-                "desc": ""
+                "name": "sgRNA ID",
+                "desc": "Unique sgRNA identifier"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4243,8 +4148,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "symbol",
-                "desc": ""
+                "name": "Gene ID",
+                "desc": "Unique gene identifier"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4280,8 +4185,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "t_cells_cd4",
-                "desc": ""
+                "name": "CD4+ T Cells",
+                "desc": "Fraction of sampled immune cells represented by CD4+ T cells"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -4299,8 +4204,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "t_cells_cd8",
-                "desc": ""
+                "name": "CD8+ T Cells",
+                "desc": "Fraction of sampled immune cells represented by CD8+ T cells"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -4318,8 +4223,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "totalsgrnas",
-                "desc": ""
+                "name": "Total sgRNAs",
+                "desc": "Total number of sgRNAs in the library"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4379,8 +4284,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treat_mean",
-                "desc": ""
+                "name": "Treatment Mean",
+                "desc": "Median read counts in treatment samples"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4398,8 +4303,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_1",
-                "desc": ""
+                "name": "Treatment 1",
+                "desc": "Numeric identifier for the first treatment condition in the analysis"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4445,26 +4350,7 @@
             }
         ]
     },
-    "treatment_1_treatment_2": {
-        "column": [
-            "treatment_1,treatment_2"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "treatment_1_treatment_2",
-                "desc": ""
-            },
-            {
-                "process": "MAGeCK Flute",
-                "file": "data/mageck/count/combined/treatment_sample_names.txt",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
-    "treatment_2": {
+    "treat1ent_2": {
         "column": [
             "treatment_2"
         ],
@@ -4472,8 +4358,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_2",
-                "desc": ""
+                "name": "Treatment 2",
+                "desc": "Numeric identifier for the second treatment condition in the analysis"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4519,25 +4405,6 @@
             }
         ]
     },
-    "treatment_2_control_2_treatment_1_control_1": {
-        "column": [
-            "treatment_2,control_2,treatment_1,control_1"
-        ],
-        "metadata": [
-            {
-                "process": "*",
-                "file": "*",
-                "name": "treatment_2_control_2_treatment_1_control_1",
-                "desc": ""
-            },
-            {
-                "process": "MAGeCK Count",
-                "file": "data/mageck/count/combined/sample_names.txt",
-                "name": "",
-                "desc": ""
-            }
-        ]
-    },
     "treatment_control": {
         "column": [
             "treatment_control"
@@ -4546,8 +4413,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_control",
-                "desc": ""
+                "name": "Treatment vs. Control",
+                "desc": "Differential effect or change between treatment and control conditions"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4565,8 +4432,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_control_beta",
-                "desc": ""
+                "name": "Treatment vs. Control Beta",
+                "desc": "The beta coefficient representing the treatment effect compared to the control group in statistical modeling"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4584,8 +4451,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_control_fdr",
-                "desc": ""
+                "name": "Treatment vs. Control FDR",
+                "desc": "The false discovery rate (FDR) adjusted for multiple comparisons for the treatment effect compared to the control group"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4603,8 +4470,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_control_p_value",
-                "desc": ""
+                "name": "Treatment vs. Control p-value",
+                "desc": "The p-value associated with the treatment effect compared to the control group, indicating statistical significance"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4622,8 +4489,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_control_wald_fdr",
-                "desc": ""
+                "name": "Treatment vs. Control Wald Test FDR",
+                "desc": "The false discovery rate (FDR) adjusted for multiple comparisons for the treatment effect based on the Wald test"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4641,8 +4508,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_control_wald_p_value",
-                "desc": ""
+                "name": "Treatment vs. Control Wald Test p-value",
+                "desc": "The p-value obtained from the Wald test assessing the treatment effect compared to the control group"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4660,8 +4527,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_control_z",
-                "desc": ""
+                "name": "Treatment vs. Control Z-Score",
+                "desc": "The Z-score indicating the significance of the treatment effect compared to the control group in statistical analysis"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4679,8 +4546,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "treatment_count",
-                "desc": ""
+                "name": "Normalized Treatment Counts",
+                "desc": "The normalized read counts associated with the treatment group in the analysis"
             },
             {
                 "process": "MAGeCK Flute",
@@ -4698,8 +4565,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "tregs",
-                "desc": ""
+                "name": "Tregs",
+                "desc": "Fraction of sampled immune cells represented by regulatory T cells (tregs)"
             },
             {
                 "process": "Lymphocyte Quantification",
@@ -4717,8 +4584,8 @@
             {
                 "process": "*",
                 "file": "*",
-                "name": "zerocounts",
-                "desc": ""
+                "name": "Zero Counts",
+                "desc": "Total number of missing sgRNAs (sgRNAs that have 0 counts)"
             },
             {
                 "process": "MAGeCK Flute",
