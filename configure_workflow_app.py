@@ -5,6 +5,8 @@ from time import sleep
 from typing import Dict, List
 import zipfile
 from cirro import DataPortal
+from cirro.sdk.reference import DataPortalReference
+from cirro.sdk.process import DataPortalProcess
 from cirro.api.auth.oauth_client import ClientAuth
 from cirro.api.config import AppConfig
 from cirro.api.clients.portal import DataPortalClient
@@ -114,7 +116,9 @@ def list_processes(ingest=False) -> List[str]:
     portal: DataPortal = st.session_state['DataPortal']
 
     # List the projects available
-    process_list = portal.list_processes(ingest=ingest)
+    process_list: List[DataPortalProcess] = portal.list_processes(
+        ingest=ingest
+    )
     if ingest:
         process_list = process_list + portal.list_processes()
 
@@ -132,7 +136,7 @@ def list_processes(ingest=False) -> List[str]:
 def list_projects() -> List[str]:
 
     # Connect to Cirro
-    portal = st.session_state['DataPortal']
+    portal: DataPortal = st.session_state['DataPortal']
 
     # List the projects available
     project_list = portal.list_projects()
@@ -140,6 +144,37 @@ def list_projects() -> List[str]:
     # Return the list of projects available (using their easily-readable names)
     return [proj.name for proj in project_list]
 
+
+@session_cache
+def list_references() -> List[DataPortalReference]:
+
+    # Connect to Cirro
+    portal: DataPortal = st.session_state['DataPortal']
+
+    # List the references available
+    reference_list: List[DataPortalReference] = portal.list_reference_types()
+
+    # {
+    #   'name': 'Barcode files (general)',
+    #   'description': 'List of line-separated barcodes',
+    #   'directory': 'barcodes',
+    #   'validation': [{'fileType': 'txt', 'saveAs': 'barcode.txt'}]
+    # }
+    return reference_list
+
+
+def get_reference_str(ref_name) -> str:
+
+    # Connect to Cirro
+    portal: DataPortal = st.session_state['DataPortal']
+
+    for ref in portal.list_reference_types():
+        if ref.name == ref_name:
+            if "validation" in ref.__dict__:
+                filename = ref.validation[0]['saveAs']
+            else:
+                filename = "*"
+            return f"**/{ref.directory}/**/{filename}"
 
 @session_cache
 def get_dataset(project_name, dataset_name):
@@ -363,6 +398,11 @@ class SourceConfig(WorkflowConfigElement):
             help="Supports branch names, commits, tags, and releases.",
             **self.input_kwargs(config, "repository")
         )
+        if self.repository == "GITHUBPRIVATE":
+            config.form_container.write("""
+Make sure to connect your private GitHub repository to Cirro by
+installing the [Cirro Data Portal App](https://github.com/apps/cirro-data-portal).
+""")
 
         config.form_container.multiselect(
             "Parent Processes",
@@ -392,11 +432,11 @@ class Param:
     workflow_config: 'WorkflowConfig'
     input_type: str
     input_type_options = [
+        "Dataset Name",
         "Form Entry",
-        "Output Directory",
-        "Input Directory",
         "Hardcoded Value",
-        "Dataset Name"
+        "Input Directory",
+        "Output Directory"
     ]
 
     input_type_values = {
@@ -405,12 +445,19 @@ class Param:
         "Dataset Name": "$.params.dataset.name"
     }
 
+    form_type_options = [
+        "Cirro Dataset",
+        "Input File",
+        "Cirro Reference",
+        "User-Provided Value"
+    ]
+
     form_value_types = [
+        "array",
+        "boolean",
         "integer",
         "number",
-        "string",
-        "boolean",
-        "array"
+        "string"
     ]
     deleted = False
 
@@ -450,6 +497,36 @@ class Param:
                 )
                 for i in range(len(self.form_key))
             }
+
+            # Parse the form type
+            if self.form_config.get("pathType") == "dataset":
+
+                # Cirro Dataset
+                if "process" in self.form_config:
+                    self.form_type = "Cirro Dataset"
+                # File from Input Cirro Dataset
+                elif "file" in self.form_config:
+                    self.form_type = "Input File"
+                else:
+                    raise Exception(f"Expected 'process' or 'form' in {self.id}")
+
+            # Cirro Reference
+            elif self.form_config.get("pathType") == "references":
+                self.form_type = "Cirro Reference"
+
+                msg = "Expected 'file' for pathType: references"
+                assert "file" in self.form_config, msg
+
+                msg = "Reference 'file' must start with '**/'"
+                assert self.form_config["file"].startswith("**/"), msg
+
+                # Parse the reference ID and the file name
+                self.reference_id = self.form_config["file"][3:].split("/", 1)[0]
+                self.reference_file = self.form_config["file"].rsplit("/", 1)[-1]
+
+            # Native React form element
+            else:
+                self.form_type = "User-Provided Value"
 
         # Fallback - hardcoded value
         else:
@@ -502,6 +579,13 @@ class Param:
         # Populate the form element, along with all parent levels
         if self.input_type == "Form Entry":
 
+            # If the user is to be presented with a reference input
+            if self.form_type == "Cirro Reference":
+
+                # Set up the file attribute
+                file_str = f"**/{self.reference_id}/**/{self.reference_file}"
+                self.form_config["file"] = file_str
+
             # All new params will exist at the root level
             if "form_key" not in self.__dict__:
                 self.form_key = [self.id]
@@ -539,60 +623,191 @@ class Param:
             expanded=True
         )
 
+        # Let the user edit the parameter name
+        self.text_input(
+            "id",
+            "Parameter ID",
+            self.id,
+            help="Key used to identify the paramter value to the workflow"
+        )
+
         # Set up a drop-down for the input type
         self.dropdown(
             "input_type",
             "Input Type",
             self.input_type_options,
+            help="Select the way in which the value of the parameter is set",
             index=self.input_type_options.index(self.input_type)
         )
 
-        if self.input_type == "Form Entry":
-            self.dropdown(
-                "form.type",
-                "Form Value Type",
-                self.form_value_types,
-                self.form_value_types.index(self.form_config["type"])
+        if self.input_type == "Dataset Name":
+            self.expander.write("""
+The parameter will be populated with the name of the new dataset
+which was provided by the user.
+""")
+
+        elif self.input_type == "Input Directory":
+            self.expander.write("""
+The parameter will be populated with the base URL of the files
+which make up the contents of the input dataset.
+""")
+
+        elif self.input_type == "Output Directory":
+            self.expander.write("""
+The parameter will be populated with the base URL of the dataset
+which will be created with the outputs of this workflow.
+""")
+
+        elif self.input_type == "Form Entry":
+
+            self.expander.write(
+                "The parameter will be set by the user using a form."
             )
 
-            if self.form_config["type"] == "string":
+            # Let the user set up the title and description
+            self.text_input(
+                "form.title",
+                "Parameter Title",
+                self.form_config.get("title", ""),
+                help="Title displayed in the form to the user"
+            )
+            self.text_input(
+                "form.description",
+                "Parameter Description",
+                self.form_config.get("description", ""),
+                help="Longer description provided in the form to the user"
+            )
 
-                self.text_input(
-                    "form.default",
-                    "Default Value",
-                    self.form_config.get('default', ""),
-                )
+            # Let the user modify the form type
+            self.dropdown(
+                "form_type",
+                "Form Entry Type",
+                self.form_type_options,
+                self.form_type_options.index(self.form_type),
+                help="Select the type of form entry element shown to the user"
+            )
 
-            elif self.form_config["type"] == "number":
-
-                self.number_input(
-                    "form.default",
-                    "Default Value",
-                    self.form_config.get('default', ""),
-                )
-
-            elif self.form_config["type"] == "integer":
-
-                self.integer_input(
-                    "form.default",
-                    "Default Value",
-                    self.form_config.get('default', ""),
-                )
-
-            elif self.form_config["type"] == "boolean":
-
-                if "value" not in self.form_config:
-                    self.form_config["value"] = False
-                elif not isinstance(self.form_config["value"], bool):
-                    self.form_config["value"] = False
+            # User-provided value (vanilla react form element)
+            if self.form_type == "User-Provided Value":
 
                 self.dropdown(
-                    "form.default",
-                    "Default Value",
-                    [True, False],
-                    [True, False].index(self.form_config["value"])
+                    "form.type",
+                    "Form Value Type",
+                    self.form_value_types,
+                    self.form_value_types.index(self.form_config["type"]),
+                    help="Select the value type allowed for user entry"
                 )
 
+                if self.form_config["type"] == "string":
+
+                    self.text_input(
+                        "form.default",
+                        "Default Value",
+                        self.form_config.get('default', ""),
+                    )
+
+                elif self.form_config["type"] == "number":
+
+                    self.number_input(
+                        "form.default",
+                        "Default Value",
+                        self.form_config.get('default', ""),
+                    )
+
+                elif self.form_config["type"] == "integer":
+
+                    self.integer_input(
+                        "form.default",
+                        "Default Value",
+                        self.form_config.get('default', ""),
+                    )
+
+                elif self.form_config["type"] == "boolean":
+
+                    if "value" not in self.form_config:
+                        self.form_config["value"] = False
+                    elif not isinstance(self.form_config["value"], bool):
+                        self.form_config["value"] = False
+
+                    self.dropdown(
+                        "form.default",
+                        "Default Value",
+                        [True, False],
+                        [True, False].index(self.form_config["value"])
+                    )
+
+            # Select a dataset as the input
+            elif self.form_type == "Cirro Dataset":
+
+                self.expander.write(
+                    """
+The user will select an existing dataset.
+The workflow will be provided with the base URL which contains
+the files in that dataset.
+"""
+                )
+
+                # Select the dataset type to choose from
+                self.dropdown(
+                    "form.process",
+                    "Select Dataset of Type:",
+                    list_processes(ingest=True),
+                    self.index_process_type,
+                    help="Only datasets of a particular type will be shown to the user" # noqa
+                )
+
+            # Select a file from the input dataset
+            elif self.form_type == "Input File":
+
+                self.expander.write("""
+The user will select one (or more) files from the input dataset,
+optionally filtering based on filename using a wildcard glob.
+""")
+
+                self.text_input(
+                    "form.file",
+                    "File Pattern Filter",
+                    self.form_config("file", "**/*"),
+                    help="Subset the files to select from which match the wildcard glob" # noqa
+                )
+                self.dropdown(
+                    "form.multiple",
+                    "Allow Multiple File Selection",
+                    [True, False],
+                    [True, False].index(
+                        self.form_config.get('multiple', False)
+                    ),
+                    help="Optionally allow the user to select multiple files"
+                )
+
+            # Select a Cirro reference object
+            else:
+                assert self.form_type == "Cirro Reference"
+
+                self.expander.write("""
+The user will select a reference object which has been
+uploaded to their project.
+""")
+
+                # Select the reference type to choose from
+                self.dropdown(
+                    "reference_id",
+                    "Reference Type",
+                    self.reference_list_display,
+                    self.index_reference_type,
+                    help="Select the reference data type to use"
+                )
+
+                # Select the reference file to choose from
+                self.dropdown(
+                    "reference_file",
+                    "Reference File",
+                    self.reference_file_display,
+                    self.index_reference_file,
+                    help="Select the specific file from the reference data"
+                )
+
+        # Just a value
         elif self.input_type == "Hardcoded Value":
             self.text_input(
                 "value",
@@ -607,6 +822,59 @@ class Param:
             on_click=self.remove
         )
 
+    @property
+    def index_process_type(self) -> int:
+
+        pid = self.form_config['process']
+
+        for i, n in enumerate(list_processes(ingest=True)):
+            if f"({pid})" in n:
+                return i
+        raise Exception(f"Could not find appropriate process for {pid}")
+
+    @property
+    def reference_list_display(self) -> List[str]:
+        return [
+            ref.name
+            for ref in list_references()
+        ]
+
+    @property
+    def index_reference_type(self) -> int:
+        for i, ref in enumerate(list_references()):
+            if ref.directory == self.reference_id:
+                return i
+            if ref.name == self.reference_id:
+                return i
+        msg = f"Could not find appropriate reference for {self.reference_id}"
+        raise Exception(msg)
+
+    @property
+    def reference_file_display(self):
+        # Get the reference object which was selected
+        ref = list_references()[self.index_reference_type]
+
+        # Return the list of files available
+        return [
+            file['saveAs']
+            for file in ref.validation
+        ]
+
+    def find_reference_directory(self, ref_name):
+        for ref in list_references():
+            if ref.name == ref_name:
+                return ref.directory
+        raise Exception(f"Could not find reference: {ref_name}")
+
+    @property
+    def index_reference_file(self):
+        """Return the index position of the selected file."""
+
+        for i, file_name in enumerate(self.reference_file_display):
+            if self.reference_file == file_name:
+                return i
+        return 0
+
     def remove(self):
         """Remove this param from the inputs."""
 
@@ -614,23 +882,25 @@ class Param:
         self.workflow_config.save_config()
         self.workflow_config.reset()
 
-    def text_input(self, kw, title, value):
+    def text_input(self, kw, title, value, **kwargs):
 
         self.expander.text_input(
             title,
             value,
-            **self.input_kwargs(kw)
+            **self.input_kwargs(kw),
+            **kwargs
         )
 
-    def number_input(self, kw, title, value):
+    def number_input(self, kw, title, value, **kwargs):
 
         self.expander.number_input(
             title,
             value,
-            **self.input_kwargs(kw)
+            **self.input_kwargs(kw),
+            **kwargs
         )
 
-    def integer_input(self, kw, title, value):
+    def integer_input(self, kw, title, value, **kwargs):
 
         try:
             value = int(value)
@@ -641,16 +911,18 @@ class Param:
             title,
             value,
             step=1,
-            **self.input_kwargs(kw)
+            **self.input_kwargs(kw),
+            **kwargs
         )
 
-    def dropdown(self, kw, title, options, index):
+    def dropdown(self, kw, title, options, index, **kwargs):
 
         self.expander.selectbox(
             title,
             options,
             index=index,
-            **self.input_kwargs(kw)
+            **self.input_kwargs(kw),
+            **kwargs
         )
 
     def input_kwargs(self, kw):
@@ -665,15 +937,34 @@ class Param:
 
     def update_attribute(self, kw: str):
         val = st.session_state[self.ui_key(kw)]
+
+        # If we are updating the reference type
+        if kw == "reference_id":
+
+            # Map the human-readable name to the directory
+            val = self.find_reference_directory(val)
+
+        # If we are updating the form type
+        if kw == "form_type":
+
+            # Update the form type
+            self.update_form_type(val)
+
         # If we are changing a form element
-        if kw.startswith("form."):
+        elif kw.startswith("form."):
+
+            # If we are modifying a process attribute
+            if kw == "form.process":
+
+                # Trim it down to the process id
+                val = val.rsplit(" (", 1)[-1].rstrip(")")
 
             # If the value is the same
             if val == self.form_elements[
                 ".".join(self.form_key)
-            ][
+            ].get(
                 kw[len("form."):]
-            ]:
+            ):
                 # Take no action
                 return
 
@@ -684,6 +975,23 @@ class Param:
             ][
                 kw[len("form."):]
             ] = val
+
+            # If the form input type was changed
+            if kw == "form.type":
+
+                # Set the new default value
+                self.form_elements[
+                    ".".join(self.form_key)
+                ][
+                    "default"
+                ] = dict(
+                    integer=0,
+                    number=0.0,
+                    string="",
+                    boolean=False,
+                    array=[]
+                )[val]
+
         else:
             # If the value is the same
             if val == self.__dict__[kw]:
@@ -699,11 +1007,72 @@ class Param:
                 # If there is a hardcoded value
                 if val in self.input_type_values:
                     self.value = self.input_type_values[val]
+
+                # If we are turning something into a form entry
+                elif val == "Form Entry":
+                    # Set up the blank form attributes
+                    self.value = f"$.params.dataset.paramJson.{self.id}"
+                    self.form_type = "User-Provided Value"
+
+                    self.form_elements = {
+                        self.id: {
+                            "type": "string",
+                            "default": "",
+                            "title": self.id,
+                            "description": f"Description of {self.id}"
+                        }
+                    }
+
                 else:
                     self.value = ""
 
         self.workflow_config.save_config()
         self.workflow_config.reset()
+
+    def update_form_type(self, val):
+        """Change the form input type."""
+
+        # Get the form element
+        form_element = self.form_elements[
+            ".".join(self.form_key)
+        ]
+        form_element["type"] = "string"
+
+        # Vanilla react form schema
+        if val == "User-Provided Value":
+
+            # Delete any special-case attributes
+            for kw in ["file", "pathType", "process"]:
+                if kw in form_element:
+                    del form_element[kw]
+
+        # Custom element
+        else:
+
+            # Select a dataset
+            if val == "Cirro Dataset":
+
+                # Use the special pathType attribute
+                form_element["pathType"] = "dataset"
+                # Use the process attribute
+                form_element["process"] = "paired_dnaseq"
+
+            # Select a file from the input dataset
+            elif val == "Input File":
+
+                # Use the special pathType attribute
+                form_element["pathType"] = "dataset"
+                # Use the file attribute
+                form_element["file"] = "**/*"
+
+            # Select a reference object
+            else:
+
+                assert val == "Cirro Reference", f"Unexpected: {val}"
+
+                # Use the special pathType attribute
+                form_element["pathType"] = "references"
+                form_element["file"] = "**/genome_fasta/**/genome.fasta"
 
 
 class ParamsConfig(WorkflowConfigElement):
@@ -742,6 +1111,35 @@ class ParamsConfig(WorkflowConfigElement):
         """
         for param in self.params:
             param.serve(config)
+
+        # Provide a button to add a new parameter
+        config.params_container.button(
+            "Add Parameter",
+            f"add_parameter.{st.session_state['form_ix']}",
+            on_click=self.add_parameter,
+            args=(config,)
+        )
+
+    def add_parameter(self, config: 'WorkflowConfig') -> None:
+        """Add a single parameter to the config."""
+
+        # Find a unique parameter ID
+        param_ix = 1
+        while f"param_{param_ix}" in map(lambda p: p.id, self.params):
+            param_ix += 1
+
+        # Add the parameter
+        self.params.append(
+            Param(
+                f"param_{param_ix}",
+                dict(input={f"param_{param_ix}": ""}),
+                config
+            )
+        )
+
+        # Save the updated config
+        config.save_config()
+        config.reset()
 
 
 class OutputsConfig(WorkflowConfigElement):
@@ -840,7 +1238,7 @@ class WorkflowConfig:
         st.session_state["config"] = self.format_config()
 
     def save_history(self):
-        "Save the current config to history"
+        """Save the current config to history"""
 
         if (
             st.session_state.get("config") is not None and
