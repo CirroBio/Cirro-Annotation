@@ -427,8 +427,78 @@ installing the [Cirro Data Portal App](https://github.com/apps/cirro-data-portal
         )
 
 
-class Param:
+class UIElement:
+    """Helper class with useful interface elements."""
 
+    id: str
+    ui_key_prefix: str
+    expander: DeltaGenerator
+    workflow_config: 'WorkflowConfig'
+
+    def ui_key(self, kw: str):
+        return f"{self.ui_key_prefix}.{self.id}.{kw}.{st.session_state.get('form_ix', 0)}"
+
+    def remove(self):
+        """Remove this param from the inputs."""
+
+        self.deleted = True
+        self.workflow_config.save_config()
+        self.workflow_config.reset()
+
+    def text_input(self, kw, title, value, **kwargs):
+
+        self.expander.text_input(
+            title,
+            value,
+            **self.input_kwargs(kw),
+            **kwargs
+        )
+
+    def number_input(self, kw, title, value, **kwargs):
+
+        self.expander.number_input(
+            title,
+            value,
+            **self.input_kwargs(kw),
+            **kwargs
+        )
+
+    def integer_input(self, kw, title, value, **kwargs):
+
+        try:
+            value = int(value)
+        except ValueError:
+            value = 0
+
+        self.expander.number_input(
+            title,
+            value,
+            step=1,
+            **self.input_kwargs(kw),
+            **kwargs
+        )
+
+    def dropdown(self, kw, title, options, index, **kwargs):
+
+        self.expander.selectbox(
+            title,
+            options,
+            index=index,
+            **self.input_kwargs(kw),
+            **kwargs
+        )
+
+    def input_kwargs(self, kw):
+        return dict(
+            key=self.ui_key(kw),
+            on_change=self.update_attribute,
+            args=(kw,)
+        )
+
+
+class Param(UIElement):
+
+    ui_key_prefix = "params"
     workflow_config: 'WorkflowConfig'
     input_type: str
     input_type_options = [
@@ -875,66 +945,6 @@ uploaded to their project.
                 return i
         return 0
 
-    def remove(self):
-        """Remove this param from the inputs."""
-
-        self.deleted = True
-        self.workflow_config.save_config()
-        self.workflow_config.reset()
-
-    def text_input(self, kw, title, value, **kwargs):
-
-        self.expander.text_input(
-            title,
-            value,
-            **self.input_kwargs(kw),
-            **kwargs
-        )
-
-    def number_input(self, kw, title, value, **kwargs):
-
-        self.expander.number_input(
-            title,
-            value,
-            **self.input_kwargs(kw),
-            **kwargs
-        )
-
-    def integer_input(self, kw, title, value, **kwargs):
-
-        try:
-            value = int(value)
-        except ValueError:
-            value = 0
-
-        self.expander.number_input(
-            title,
-            value,
-            step=1,
-            **self.input_kwargs(kw),
-            **kwargs
-        )
-
-    def dropdown(self, kw, title, options, index, **kwargs):
-
-        self.expander.selectbox(
-            title,
-            options,
-            index=index,
-            **self.input_kwargs(kw),
-            **kwargs
-        )
-
-    def input_kwargs(self, kw):
-        return dict(
-            key=self.ui_key(kw),
-            on_change=self.update_attribute,
-            args=(kw,)
-        )
-
-    def ui_key(self, kw: str):
-        return f"params.{self.id}.{kw}.{st.session_state.get('form_ix', 0)}"
-
     def update_attribute(self, kw: str):
         val = st.session_state[self.ui_key(kw)]
 
@@ -1142,6 +1152,382 @@ class ParamsConfig(WorkflowConfigElement):
         config.reset()
 
 
+class OutputMeltConfig(UIElement):
+
+    ui_key_prefix = "output_melt"
+
+    def __init__(self, dat: dict, id: str, workflow_config: 'WorkflowConfig'):
+        self.enabled = dat is not None
+        self.dat = dat
+        self.id = id
+        self.workflow_config = workflow_config
+
+        if dat is not None:
+            for kw1, val1 in dat.items():
+                for kw2, val2 in val1.items():
+                    self.__dict__[f"{kw1}_{kw2}"] = val2
+
+    def serve(self, expander: DeltaGenerator):
+
+        self.expander = expander
+
+        self.dropdown(
+            "enabled",
+            "Melt Remaining Columns",
+            [True, False],
+            [True, False].index(self.enabled)
+        )
+
+        if self.enabled:
+            for kw1, desc1 in [
+                ("key", "column headers"),
+                ("value", "table values")
+            ]:
+                for kw2, desc2 in [("name", "Name"), ("desc", "Description")]:
+                    kw = f"{kw1}_{kw2}"
+                    self.text_input(
+                        value=self.__dict__[kw],
+                        kw=kw,
+                        title=f"{desc2} of data in {desc1}"
+                    )
+
+    def update_attribute(
+        self,
+        kw: str
+    ):
+        # Get the value from the input element
+        val = st.session_state[self.ui_key(kw)]
+
+        # If the value is the same
+        if val == self.__dict__.get(kw):
+            # Take no action
+            return
+
+        # If the value is different, update the attribute
+        self.__dict__[kw] = val
+
+        # And then redraw the form (below)
+        self.workflow_config.save_config()
+        self.workflow_config.reset()
+
+    def dump(self) -> dict:
+        return dict(
+            key=dict(
+                name=self.__dict__.get("key_name", ""),
+                desc=self.__dict__.get("key_desc", "")
+            ),
+            value=dict(
+                name=self.__dict__.get("value_name", ""),
+                desc=self.__dict__.get("value_desc", "")
+            )
+        )
+
+
+class OutputColumnConfig(UIElement):
+
+    ui_key_prefix = "output_column"
+
+    def __init__(self, col: dict, id: str, workflow_config: 'WorkflowConfig'):
+        self.col = col
+        self.id = id
+        self.workflow_config = workflow_config
+
+    def serve(self, expander: DeltaGenerator):
+
+        self.expander = expander
+
+        self.expander.write("---")
+        for attr in [
+            dict(
+                kw="col",
+                title="Column Header",
+                help="Value in the header row for the column"
+            ), dict(
+                kw="name",
+                title="Column Name",
+                help="Name presented to the user for the values in the column"
+            ), dict(
+                kw="desc",
+                title="Column Description",
+                help="Longer description of data in the column"
+            )
+        ]:
+            self.text_input(
+                value=self.col.get(attr["kw"], ""),
+                **attr
+            )
+
+    def update_attribute(
+        self,
+        kw: str
+    ):
+        # Get the value from the input element
+        val = st.session_state[self.ui_key(kw)]
+
+        # If the value is the same
+        if val == self.col.get(kw):
+            # Take no action
+            return
+
+        # If the value is different, update the attribute
+        self.col[kw] = val
+
+        # And then redraw the form (below)
+        self.workflow_config.save_config()
+        self.workflow_config.reset()
+
+
+class OutputConfig(UIElement):
+
+    commands = ["hot.Parquet"]
+    ui_key_prefix = "output"
+    source_prefix = "$data_directory/"
+    delimeters = dict(Tab="\t", Comma=",")
+
+    def __init__(
+        self,
+        file_config: dict,
+        file_ix: int,
+        workflow_config: 'WorkflowConfig'
+    ):
+        self.file_config: dict = file_config
+        self.workflow_config = workflow_config
+        self.deleted = False
+        self.id = file_ix
+
+        assert "command" in self.file_config, "Missing 'command'"
+        msg = f"Unrecognized: {self.command}"
+        assert self.command in self.commands, msg
+
+        # Set up minimal attributes for output types
+        if self.command == "hot.Parquet":
+
+            if "params" not in self.file_config:
+                self.file_config["params"] = dict()
+            if "cols" not in self.file_config["params"]:
+                self.file_config["params"]["cols"] = []
+            if "name" not in self.file_config["params"]:
+                self.file_config["params"]["name"] = "Output File"
+
+            # Set up the delimeter as a self attribute
+            self.delimeter = self.file_config["params"].get(
+                "read_csv", {}
+            ).get(
+                "parse", {}
+            ).get(
+                "delimeter", ","
+            )
+
+            # Set up the column attributes
+            self.columns = [
+                OutputColumnConfig(
+                    col,
+                    f"{self.id}.col_{col_ix}",
+                    workflow_config
+                )
+                for col_ix, col in enumerate(
+                    self.file_config["params"]["cols"]
+                )
+            ]
+
+            # Set up the optional melt attributes
+            self.melt = OutputMeltConfig(
+                self.file_config.get("melt"),
+                f"{self.id}.melt",
+                workflow_config
+            )
+
+    @property
+    def command(self) -> str:
+        return self.file_config['command']
+
+    @property
+    def name(self) -> str:
+        return self.file_config["params"]["name"]
+
+    @property
+    def source(self) -> str:
+        return (self.file_config["params"]
+                .get("source", self.source_prefix)
+                [len(self.source_prefix):])
+
+    @property
+    def target(self):
+        """Format the target based on the file path."""
+        return self.source.replace("/", "_") + ".parquet"
+
+    def update_delimeter(self):
+        val = st.session_state[f"{self.id}_delimeter_{st.session_state['form_ix']}"]
+        val = self.delimeters[val]
+        if val != self.delimeter:
+            self.delimeter = val
+            self.workflow_config.save_config()
+            self.workflow_config.reset()
+
+    def serve(self, config: 'WorkflowConfig'):
+        """Serve the user interaction for this output file."""
+
+        # Set up an expander for this element
+        self.expander = config.outputs_container.expander(
+            self.name,
+            expanded=True
+        )
+
+        # Select the command type
+        enum = ["hot.Parquet"]
+        enumNames = ["Delimeter-Separated Values (CSV, TSV, etc.)"]
+        self.dropdown(
+            "command",
+            "Data Encoding",
+            enumNames,
+            enum.index(self.command),
+            kwargs=dict(names=dict(zip(enum, enumNames))),
+            help="Serialization method used to save the data"
+        )
+
+        if self.command == "hot.Parquet":
+
+            required = ["name", "desc", "source"]
+
+            # Set the top-level attributes
+            for attr in [
+                dict(
+                    kw="name",
+                    title="Display Name",
+                    value=self.name,
+                    help="Name of dataset presented to the user in Cirro"
+                ),
+                dict(
+                    kw="desc",
+                    title="Description",
+                    value=self.file_config["params"].get("desc", ""),
+                    help="Full description of dataset persented in Cirro"
+                ),
+                dict(
+                    kw="source",
+                    title="File Path",
+                    value=self.source,
+                    help="File location within the output directory",
+                    kwargs=dict(
+                        transform=lambda v: f"{self.source_prefix}{v.strip('/')}"
+                    )
+                ),
+                dict(
+                    kw="url",
+                    title="Documentation URL (optional)",
+                    help="Optionally provide a webpage documenting dataset contents",
+                    value=self.file_config["params"].get("url", "")
+                )
+            ]:
+                kwargs = attr.get("kwargs", {})
+                if "pointer" not in kwargs:
+                    kwargs["pointer"] = self.file_config["params"]
+                self.text_input(
+                    kwargs=kwargs,
+                    **{
+                        k: v
+                        for k, v in attr.items()
+                        if k != "kwargs"
+                    }
+                )
+
+                if attr["kw"] in required:
+
+                    if self.file_config["params"].get(attr["kw"], "") == "":
+                        self.expander.write(
+                            f"Missing: Please provide {attr['title'].lower()}"
+                        )
+
+            # Set up a dropdown for the delimeter selection
+            self.expander.selectbox(
+                "Delimeter",
+                self.delimeters.keys(),
+                list(self.delimeters.values()).index(self.delimeter),
+                key=f"{self.id}_delimeter_{st.session_state['form_ix']}",
+                on_change=self.update_delimeter
+            )
+
+            for col in self.columns:
+                col.serve(self.expander)
+
+            if len(self.columns) == 0:
+                self.expander.write("Missing: Please define file columns")
+
+            # Let the user add a column
+            self.expander.button(
+                "Add Column",
+                key=f"add_column_button.{self.id}.{st.session_state['form_ix']}",
+                on_click=self.add_column
+            )
+
+            # Set up the user inputs to drive the melt command
+            self.melt.serve(self.expander)
+
+    def add_column(self):
+        """Add a column for the file."""
+
+        self.file_config["params"]["cols"].append(dict(
+            col="",
+            name="",
+            desc=""
+        ))
+        self.workflow_config.save_config()
+        self.workflow_config.reset()
+
+    def update_attribute(
+        self,
+        kw: str,
+        pointer=None,
+        names=dict(),
+        transform=None
+    ):
+        # Get the value from the input element
+        val = st.session_state[self.ui_key(kw)]
+
+        # Transform the value, if needed
+        val = names.get(val, val)
+
+        if transform is not None:
+            val = transform(val)
+
+        # If no pointer is provided
+        if pointer is None:
+            # Use the file_config
+            pointer = self.file_config
+
+        # If the value is the same
+        if val == pointer.get(kw):
+            # Take no action
+            return
+
+        # If the value is different, update the attribute
+        pointer[kw] = val
+
+        # And then redraw the form (below)
+        self.workflow_config.save_config()
+        self.workflow_config.reset()
+
+    def dump(self) -> dict:
+        """Write out the configuration."""
+
+        if self.command == "hot.Parquet":
+            # Set up the target kw
+            self.file_config["params"]["target"] = self.target
+            # Set up the delimeter
+            self.file_config["params"]["read_csv"] = dict(
+                parse=dict(
+                    delimeter=self.delimeter
+                )
+            )
+            # Set up the melt syntax
+            if self.melt.enabled:
+                self.file_config["melt"] = self.melt.dump()
+            elif "melt" in self.file_config:
+                del self.file_config["melt"]
+
+        return self.file_config
+
+
 class OutputsConfig(WorkflowConfigElement):
 
     def load(self, config: dict) -> None:
@@ -1149,20 +1535,64 @@ class OutputsConfig(WorkflowConfigElement):
         Set up attributes based on the contents
         of the configuration JSON
         """
-        pass
+
+        self.outputs: List[OutputConfig] = [
+            OutputConfig(file_config, file_ix, self.workflow_config)
+            for file_ix, file_config in enumerate(config["output"].get("commands", []))
+            if file_config.get("command") in OutputConfig.commands
+        ]
 
     def dump(self, config: dict) -> None:
         """
-        The attributes of the configuration will be
-        populated based on the state of this element.
+        Write out the description of all output files.
         """
-        pass
+
+        config["output"] = dict(
+            commands=[
+                output.dump()
+                for output in self.outputs
+                if not output.deleted
+            ] + [
+                dict(
+                    command="hot.Manifest",
+                    params=dict()
+                )
+            ]
+        )
 
     def serve(self, config: 'WorkflowConfig') -> None:
         """
-        Serve the user interaction for modifying the element
+        Serve the user interaction for modifying each output file.
         """
-        pass
+        for output_file in self.outputs:
+            output_file.serve(config)
+
+        # Button to add an output
+        config.outputs_container.button(
+            "Add Output File",
+            f"add_output_file_{st.session_state['form_ix']}",
+            on_click=self.add_output_file,
+            args=(config,)
+        )
+
+    def add_output_file(self, config: 'WorkflowConfig') -> None:
+        """
+        Add a new output file to the list.
+        """
+        self.outputs.append(
+            OutputConfig(
+                dict(
+                    command="hot.Parquet",
+                    params=dict(
+                        name=f"Output File {len(self.outputs) + 1}"
+                    )
+                ),
+                len(self.outputs),
+                config
+            )
+        )
+        config.save_config()
+        config.reset()
 
 
 class PreprocessConfig(WorkflowConfigElement):
@@ -1377,6 +1807,7 @@ class WorkflowConfig:
         # Set up the containers
         self.form_container = self.tabs_empty["Analysis Workflow"].container()
         self.params_container = self.tabs_empty["Input Parameters"].container()
+        self.outputs_container = self.tabs_empty["Output Files"].container()
 
         # Get the configuration from the session state
         config = self.load_config()
